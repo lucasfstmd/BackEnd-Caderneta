@@ -4,6 +4,7 @@ import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { Usuario } from './entities/usuario.entity';
 import { Repository } from 'typeorm';
+import { FindUsuarioDto } from './dto/find-usuario.dto';
 
 @Injectable()
 export class UsuariosService {
@@ -17,7 +18,7 @@ export class UsuariosService {
       senha: await bcrypt.hash(createUsuarioDto.senha, 10),
     };
 
-    const usuarioCreate = this.usuariosRepository.save(data);
+    await this.usuariosRepository.save(data);
 
     return {
       ...createUsuarioDto,
@@ -41,7 +42,8 @@ export class UsuariosService {
     return this.usuariosRepository.delete(id);
   }
 
-  async findByUsuario(usuario: string): Promise<Usuario | null> {
+  async findByUsuario(findUsuarioDto: FindUsuarioDto): Promise<Usuario | null> {
+    const usuario = findUsuarioDto.usuario;
     const foundUsuario = await this.usuariosRepository.findOne({
       where: { usuario },
     });

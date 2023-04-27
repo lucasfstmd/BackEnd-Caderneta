@@ -7,12 +7,12 @@ export const databaseProviders = [
       const dataSource = new DataSource({
         type: 'mysql',
         host: 'localhost',
-        port: 3307,
+        port: 3306,
         username: 'root',
-        password: 'root',
-        database: 'test-caderneta',
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        password: '',
+        database: 'caderneta',
         synchronize: true,
+        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       });
 
       return dataSource.initialize();

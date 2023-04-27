@@ -1,9 +1,6 @@
 import { IsString } from 'class-validator';
 
-export class LoginRequestBody {
+export class FindUsuarioDto {
   @IsString()
   usuario: string;
-
-  @IsString()
-  password: string;
 }
