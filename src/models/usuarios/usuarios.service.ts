@@ -1,8 +1,9 @@
 import { Inject, Injectable } from '@nestjs/common';
+import * as bcrypt from 'bcrypt';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
-import { Repository } from 'typeorm';
 import { Usuario } from './entities/usuario.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class UsuariosService {
@@ -10,9 +11,18 @@ export class UsuariosService {
     @Inject('USUARIO_REPOSITORY')
     private usuariosRepository: Repository<Usuario>,
   ) {}
+  async create(createUsuarioDto: CreateUsuarioDto): Promise<Usuario> {
+    const data: CreateUsuarioDto = {
+      ...createUsuarioDto,
+      senha: await bcrypt.hash(createUsuarioDto.senha, 10),
+    };
 
-  create(createUsuarioDto: CreateUsuarioDto) {
-    return this.usuariosRepository.save(createUsuarioDto);
+    const usuarioCreate = this.usuariosRepository.save(data);
+
+    return {
+      ...createUsuarioDto,
+      senha: undefined,
+    };
   }
 
   findAll() {
@@ -29,5 +39,12 @@ export class UsuariosService {
 
   remove(id: number) {
     return this.usuariosRepository.delete(id);
+  }
+
+  async findByUsuario(usuario: string): Promise<Usuario | null> {
+    const foundUsuario = await this.usuariosRepository.findOne({
+      where: { usuario },
+    });
+    return foundUsuario || null;
   }
 }
