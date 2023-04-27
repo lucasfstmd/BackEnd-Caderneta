@@ -14,10 +14,10 @@ export class Paciente {
   @Column({ length: 100 })
   ubs: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 500 })
   nome: string;
 
-  @Column({ length: 50 })
+  @Column({ length: 500 })
   nome_social: string;
 
   @Column({ length: 100 })
@@ -53,7 +53,7 @@ export class Paciente {
   @Column({ length: 250 })
   nascimento: string;
 
-  @Column({ nullable: false })
+  @Column({ type: 'tinyint', default: 0 })
   sabe_ler_escrever: boolean;
 
   @Column({ length: 250 })
@@ -86,7 +86,7 @@ export class Paciente {
   @Column({ length: 250 })
   alergia_maior_gravidade: string;
 
-  @Column({ nullable: false })
+  @Column({ type: 'tinyint', default: 0 })
   deficiencia: boolean;
 
   @Column({ length: 250 })
