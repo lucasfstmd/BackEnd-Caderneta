@@ -12,10 +12,3 @@ export class AuthController {
     return this.authService.login(req.usuario, req.senha);
   }
 }
-/*
-{
-  "usuario": "lucas",
-  "email": "lucas@email.com",
-  "senha": "lucas123"
-}
-*/
