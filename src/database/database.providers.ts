@@ -9,7 +9,7 @@ export const databaseProviders = [
         host: 'localhost',
         port: 3306,
         username: 'root',
-        password: '',
+        password: 'root',
         database: 'caderneta',
         synchronize: true,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],

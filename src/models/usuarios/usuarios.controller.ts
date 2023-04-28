@@ -49,3 +49,10 @@ export class UsuariosController {
     return this.usuariosService.remove(+id);
   }
 }
+/*
+{
+  "usuario": "lucas",
+  "email": "lucas@email.com",
+  "senha": "lucas123"
+}
+ */
