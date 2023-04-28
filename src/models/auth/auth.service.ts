@@ -27,5 +27,3 @@ export class AuthService {
     throw new UnauthorizedException('Email or Password provided is incorrect');
   }
 }
-
-/*{ "usuario": "luacs" }*/
