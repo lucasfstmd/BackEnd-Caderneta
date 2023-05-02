@@ -12,11 +12,10 @@ import { Paciente } from '../../pacientes/entities/paciente.entity';
 @Entity('agendas')
 export class Agenda {
   @PrimaryGeneratedColumn()
-  id?: string;
+  id?: number;
 
-  @ManyToOne(() => Paciente, (paciente) => paciente.id)
-  @JoinColumn({ name: 'id_paciente' }) // Define o nome da coluna de relacionamento
-  id_paciente: Paciente;
+  @Column()
+  paciente_id?: number;
 
   @Column({ length: 50 })
   data: string;

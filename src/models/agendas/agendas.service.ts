@@ -1,26 +1,32 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateAgendaDto } from './dto/create-agenda.dto';
 import { UpdateAgendaDto } from './dto/update-agenda.dto';
+import { Repository } from 'typeorm';
+import { Agenda } from './entities/agenda.entity';
 
 @Injectable()
 export class AgendasService {
+  constructor(
+    @Inject('AGENDA_REPOSITORY')
+    private agendaRepository: Repository<Agenda>,
+  ) {}
   create(createAgendaDto: CreateAgendaDto) {
-    return 'This action adds a new agenda';
+    return this.agendaRepository.save(createAgendaDto);
   }
 
   findAll() {
-    return `This action returns all agendas`;
+    return this.agendaRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} agenda`;
+    return this.agendaRepository.findOne({ where: { id } });
   }
 
   update(id: number, updateAgendaDto: UpdateAgendaDto) {
-    return `This action updates a #${id} agenda`;
+    return this.agendaRepository.update(id, updateAgendaDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} agenda`;
+    return this.agendaRepository.delete(id);
   }
 }

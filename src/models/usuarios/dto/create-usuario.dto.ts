@@ -5,8 +5,10 @@ import {
   MaxLength,
   MinLength,
 } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateUsuarioDto {
+  @ApiProperty()
   @IsString()
   @MinLength(4)
   @MaxLength(20)
@@ -16,9 +18,11 @@ export class CreateUsuarioDto {
   })
   usuario: string;
 
+  @ApiProperty()
   @IsEmail()
   email: string;
 
+  @ApiProperty()
   @IsString()
   senha: string;
 }

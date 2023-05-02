@@ -1,8 +1,18 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { AgendasService } from './agendas.service';
 import { CreateAgendaDto } from './dto/create-agenda.dto';
 import { UpdateAgendaDto } from './dto/update-agenda.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Agendas')
 @Controller('agendas')
 export class AgendasController {
   constructor(private readonly agendasService: AgendasService) {}
