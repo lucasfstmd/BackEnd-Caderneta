@@ -1,7 +1,9 @@
 import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginRequest } from './models/LoginRequest';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Login')
 @Controller()
 export class AuthController {
   constructor(private readonly authService: AuthService) {}

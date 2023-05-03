@@ -36,4 +36,3 @@ export class Diagnostico {
   @UpdateDateColumn()
   updated: Date;
 }
-

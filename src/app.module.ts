@@ -16,6 +16,14 @@ import { ComplementaresModule } from './models/complementares/complementares.mod
 import { CronicasModule } from './models/cronicas/cronicas.module';
 import { DiagnosticosModule } from './models/diagnosticos/diagnosticos.module';
 import { FamiliaresModule } from './models/familiares/familiares.module';
+import { FragilidadesModule } from './models/fragilidades/fragilidades.module';
+import { FrrisquesModule } from './models/frrisques/frrisques.module';
+import { GlicemiaControlesModule } from './models/glicemia_controles/glicemia_controles.module';
+import { HabitosModule } from './models/habitos/habitos.module';
+import { InfanciasModule } from './models/infancias/infancias.module';
+import { IntensidadesModule } from './models/intensidades/intensidades.module';
+import { IvcfsModule } from './models/ivcfs/ivcfs.module';
+import { LaboratorialExamesModule } from './models/laboratorial_exames/laboratorial_exames.module';
 
 @Module({
   controllers: [AppController],
@@ -35,6 +43,14 @@ import { FamiliaresModule } from './models/familiares/familiares.module';
     CronicasModule,
     DiagnosticosModule,
     FamiliaresModule,
+    FragilidadesModule,
+    FrrisquesModule,
+    GlicemiaControlesModule,
+    HabitosModule,
+    InfanciasModule,
+    IntensidadesModule,
+    IvcfsModule,
+    LaboratorialExamesModule,
   ],
   providers: [AppService],
 })

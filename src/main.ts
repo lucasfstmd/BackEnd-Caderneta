@@ -8,9 +8,11 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('API BackEnd Caderneta')
-    .setDescription('The API description')
+    .setDescription(
+      'BackEnd para servico de caderneta de idosos, contendos todas as rotas bem como seus schemas e modelos de objetos para serem criados e/ou atualizados',
+    )
     .setVersion('1.0')
-    .addTag('client')
+    .addTag('CRUDS')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
