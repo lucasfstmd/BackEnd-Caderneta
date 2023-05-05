@@ -1,4 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 
 @Entity('laboratorial_exames')
 export class LaboratorialExames {
@@ -8,169 +14,169 @@ export class LaboratorialExames {
   @Column({ nullable: false })
   paciente_id: number;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   hemograma: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   plaquetas: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   contagem: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   mpv: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   observacoes_morfologicas: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   vsh: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   classifi_sanguinea: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   ic: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   ts: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   glicemia_de_jejum: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   hb_glicosilada: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   ureia: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   creatina: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   sodio: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   potassio: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   colesterol_total: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   hdl: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   ldl: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   triglicerides: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   hiv: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   tgo: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   tgp: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   bt_e_fracoes: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   acido_urico: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   psa: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   t3: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   t4: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   tsh: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   aslo: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   latex: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   pcr: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   mucoproteina: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   celula_le: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   vdrl: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eas: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   epf: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   determinacao_do_fator_reumatoide: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eritrograma_eritrocitos: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eritrograma_hemoglobina: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eritrograma_hematocrito: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eritrograma_vcm: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eritrograma_hcm: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eritrograma_chcm: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eritrograma_rdw: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   eritrograma_rdw_fl: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_leucocitos: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_promielocitos: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_mielocitos: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_metamielocitos: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_neutrofilos_em_bastao: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 255, nullable: true })
   leucograma_neutrofilos_segmentados: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_eosinofilos: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_basofilos: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_linfocitos: string;
 
-  @Column({ nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_monocitos: string;
 
   @CreateDateColumn()

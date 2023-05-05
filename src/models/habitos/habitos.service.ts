@@ -3,6 +3,7 @@ import { CreateHabitoDto } from './dto/create-habito.dto';
 import { UpdateHabitoDto } from './dto/update-habito.dto';
 import { Repository } from 'typeorm';
 import { Habito } from './entities/habito.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class HabitosService {
@@ -28,5 +29,12 @@ export class HabitosService {
 
   remove(id: number) {
     return this.habitosRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Habito> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.habitosRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

@@ -11,6 +11,7 @@ import { BioimpedanciasService } from './bioimpedancias.service';
 import { CreateBioimpedanciaDto } from './dto/create-bioimpedancia.dto';
 import { UpdateBioimpedanciaDto } from './dto/update-bioimpedancia.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Bioimpedancias')
 @Controller('bioimpedancias')
@@ -25,6 +26,14 @@ export class BioimpedanciasController {
   @Get()
   findAll() {
     return this.bioimpedanciasService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.bioimpedanciasService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

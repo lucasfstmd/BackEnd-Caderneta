@@ -24,6 +24,11 @@ import { InfanciasModule } from './models/infancias/infancias.module';
 import { IntensidadesModule } from './models/intensidades/intensidades.module';
 import { IvcfsModule } from './models/ivcfs/ivcfs.module';
 import { LaboratorialExamesModule } from './models/laboratorial_exames/laboratorial_exames.module';
+import { ObitosModule } from './models/obitos/obitos.module';
+import { PclsModule } from './models/pcls/pcls.module';
+import { PesoPerdasModule } from './models/peso_perdas/peso_perdas.module';
+import { PesosModule } from './models/pesos/pesos.module';
+import { PolifarmaciasModule } from './models/polifarmacias/polifarmacias.module';
 
 @Module({
   controllers: [AppController],
@@ -51,6 +56,11 @@ import { LaboratorialExamesModule } from './models/laboratorial_exames/laborator
     IntensidadesModule,
     IvcfsModule,
     LaboratorialExamesModule,
+    ObitosModule,
+    PclsModule,
+    PesoPerdasModule,
+    PesosModule,
+    PolifarmaciasModule,
   ],
   providers: [AppService],
 })

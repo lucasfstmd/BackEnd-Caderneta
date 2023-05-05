@@ -11,6 +11,7 @@ import { IntensidadesService } from './intensidades.service';
 import { CreateIntensidadeDto } from './dto/create-intensidade.dto';
 import { UpdateIntensidadeDto } from './dto/update-intensidade.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Intensidades')
 @Controller('intensidades')
@@ -25,6 +26,14 @@ export class IntensidadesController {
   @Get()
   findAll() {
     return this.intensidadesService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.intensidadesService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

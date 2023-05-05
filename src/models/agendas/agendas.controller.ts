@@ -11,6 +11,7 @@ import { AgendasService } from './agendas.service';
 import { CreateAgendaDto } from './dto/create-agenda.dto';
 import { UpdateAgendaDto } from './dto/update-agenda.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Agendas')
 @Controller('agendas')
@@ -25,6 +26,14 @@ export class AgendasController {
   @Get()
   findAll() {
     return this.agendasService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.agendasService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

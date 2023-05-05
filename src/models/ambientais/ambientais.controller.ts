@@ -11,6 +11,7 @@ import { AmbientaisService } from './ambientais.service';
 import { CreateAmbientaiDto } from './dto/create-ambientai.dto';
 import { UpdateAmbientaiDto } from './dto/update-ambientai.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Ambientais')
 @Controller('ambientais')
@@ -25,6 +26,14 @@ export class AmbientaisController {
   @Get()
   findAll() {
     return this.ambientaisService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.ambientaisService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

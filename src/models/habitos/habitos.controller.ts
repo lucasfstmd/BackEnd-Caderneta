@@ -11,6 +11,7 @@ import { HabitosService } from './habitos.service';
 import { CreateHabitoDto } from './dto/create-habito.dto';
 import { UpdateHabitoDto } from './dto/update-habito.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Habitos')
 @Controller('habitos')
@@ -25,6 +26,14 @@ export class HabitosController {
   @Get()
   findAll() {
     return this.habitosService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.habitosService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

@@ -3,6 +3,7 @@ import { CreateComplementareDto } from './dto/create-complementare.dto';
 import { UpdateComplementareDto } from './dto/update-complementare.dto';
 import { Repository } from 'typeorm';
 import { Complementar } from './entities/complementar.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class ComplementaresService {
@@ -28,5 +29,12 @@ export class ComplementaresService {
 
   remove(id: number) {
     return this.complementaresRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Complementar> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.complementaresRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

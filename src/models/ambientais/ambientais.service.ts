@@ -3,6 +3,7 @@ import { CreateAmbientaiDto } from './dto/create-ambientai.dto';
 import { UpdateAmbientaiDto } from './dto/update-ambientai.dto';
 import { Repository } from 'typeorm';
 import { Ambientais } from './entities/ambientai.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class AmbientaisService {
@@ -28,5 +29,12 @@ export class AmbientaisService {
 
   remove(id: number) {
     return this.ambientaisRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Ambientais> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.ambientaisRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

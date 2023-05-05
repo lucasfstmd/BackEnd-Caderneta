@@ -11,6 +11,7 @@ import { LaboratorialExamesService } from './laboratorial_exames.service';
 import { CreateLaboratorialExameDto } from './dto/create-laboratorial_exame.dto';
 import { UpdateLaboratorialExameDto } from './dto/update-laboratorial_exame.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Laboratorial-Exames')
 @Controller('laboratorial-exames')
@@ -27,6 +28,14 @@ export class LaboratorialExamesController {
   @Get()
   findAll() {
     return this.laboratorialExamesService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.laboratorialExamesService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

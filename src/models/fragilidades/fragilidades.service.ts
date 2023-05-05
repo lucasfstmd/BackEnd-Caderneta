@@ -3,6 +3,7 @@ import { CreateFragilidadeDto } from './dto/create-fragilidade.dto';
 import { UpdateFragilidadeDto } from './dto/update-fragilidade.dto';
 import { Repository } from 'typeorm';
 import { Fragilidade } from './entities/fragilidade.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class FragilidadesService {
@@ -28,5 +29,14 @@ export class FragilidadesService {
 
   remove(id: number) {
     return this.fragilidadesRepository.delete(id);
+  }
+
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Fragilidade> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.fragilidadesRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

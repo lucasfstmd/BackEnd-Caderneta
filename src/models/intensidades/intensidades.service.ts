@@ -3,6 +3,7 @@ import { CreateIntensidadeDto } from './dto/create-intensidade.dto';
 import { UpdateIntensidadeDto } from './dto/update-intensidade.dto';
 import { Repository } from 'typeorm';
 import { Intensidade } from './entities/intensidade.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class IntensidadesService {
@@ -28,5 +29,12 @@ export class IntensidadesService {
 
   remove(id: number) {
     return this.intensidadesRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Intensidade> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.intensidadesRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

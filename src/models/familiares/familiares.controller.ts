@@ -11,6 +11,7 @@ import { FamiliaresService } from './familiares.service';
 import { CreateFamiliareDto } from './dto/create-familiare.dto';
 import { UpdateFamiliareDto } from './dto/update-familiare.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Familiares')
 @Controller('familiares')
@@ -25,6 +26,14 @@ export class FamiliaresController {
   @Get()
   findAll() {
     return this.familiaresService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.familiaresService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

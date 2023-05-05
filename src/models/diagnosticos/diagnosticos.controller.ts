@@ -11,6 +11,7 @@ import { DiagnosticosService } from './diagnosticos.service';
 import { CreateDiagnosticoDto } from './dto/create-diagnostico.dto';
 import { UpdateDiagnosticoDto } from './dto/update-diagnostico.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Diagnosticos')
 @Controller('diagnosticos')
@@ -25,6 +26,14 @@ export class DiagnosticosController {
   @Get()
   findAll() {
     return this.diagnosticosService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.diagnosticosService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

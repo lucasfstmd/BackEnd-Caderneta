@@ -3,6 +3,7 @@ import { CreateFrrisqueDto } from './dto/create-frrisque.dto';
 import { UpdateFrrisqueDto } from './dto/update-frrisque.dto';
 import { Repository } from 'typeorm';
 import { Frrisque } from './entities/frrisque.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class FrrisquesService {
@@ -28,5 +29,12 @@ export class FrrisquesService {
 
   remove(id: number) {
     return this.frrisquesRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Frrisque> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.frrisquesRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

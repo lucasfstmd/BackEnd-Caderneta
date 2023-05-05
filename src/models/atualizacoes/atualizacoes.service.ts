@@ -3,6 +3,7 @@ import { CreateAtualizacoeDto } from './dto/create-atualizacoe.dto';
 import { UpdateAtualizacoeDto } from './dto/update-atualizacoe.dto';
 import { Repository } from 'typeorm';
 import { Atualizacoes } from './entities/atualizacoes.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class AtualizacoesService {
@@ -28,5 +29,12 @@ export class AtualizacoesService {
 
   remove(id: number) {
     return this.atualizacoesRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Atualizacoes> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.atualizacoesRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

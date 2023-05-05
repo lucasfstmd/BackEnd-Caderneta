@@ -3,6 +3,7 @@ import { CreateGlicemiaControleDto } from './dto/create-glicemia_controle.dto';
 import { UpdateGlicemiaControleDto } from './dto/update-glicemia_controle.dto';
 import { Repository } from 'typeorm';
 import { GlicemiaControle } from './entities/glicemia_controle.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class GlicemiaControlesService {
@@ -28,5 +29,12 @@ export class GlicemiaControlesService {
 
   remove(id: number) {
     return this.glicemiaControlesRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<GlicemiaControle> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.glicemiaControlesRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

@@ -11,6 +11,7 @@ import { ComplementaresService } from './complementares.service';
 import { CreateComplementareDto } from './dto/create-complementare.dto';
 import { UpdateComplementareDto } from './dto/update-complementare.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Complementares')
 @Controller('complementares')
@@ -25,6 +26,14 @@ export class ComplementaresController {
   @Get()
   findAll() {
     return this.complementaresService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.complementaresService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

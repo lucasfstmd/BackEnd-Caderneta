@@ -3,6 +3,7 @@ import { CreateAntropometricoDto } from './dto/create-antropometrico.dto';
 import { UpdateAntropometricoDto } from './dto/update-antropometrico.dto';
 import { Repository } from 'typeorm';
 import { Antropometricos } from './entities/antropometrico.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class AntropometricosService {
@@ -28,5 +29,12 @@ export class AntropometricosService {
 
   remove(id: number) {
     return this.antropometricasRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Antropometricos> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.antropometricasRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

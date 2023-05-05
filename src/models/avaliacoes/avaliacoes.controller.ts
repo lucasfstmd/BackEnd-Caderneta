@@ -11,6 +11,7 @@ import { AvaliacoesService } from './avaliacoes.service';
 import { CreateAvaliacoeDto } from './dto/create-avaliacoe.dto';
 import { UpdateAvaliacoeDto } from './dto/update-avaliacoe.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Avaliacoes')
 @Controller('avaliacoes')
@@ -25,6 +26,14 @@ export class AvaliacoesController {
   @Get()
   findAll() {
     return this.avaliacoesService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.avaliacoesService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

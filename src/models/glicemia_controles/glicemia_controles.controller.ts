@@ -11,6 +11,7 @@ import { GlicemiaControlesService } from './glicemia_controles.service';
 import { CreateGlicemiaControleDto } from './dto/create-glicemia_controle.dto';
 import { UpdateGlicemiaControleDto } from './dto/update-glicemia_controle.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from "../core/dto/find-pacienteId.dto";
 
 @ApiTags('Glicemia Controles')
 @Controller('glicemia-controles')
@@ -27,6 +28,14 @@ export class GlicemiaControlesController {
   @Get()
   findAll() {
     return this.glicemiaControlesService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.glicemiaControlesService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

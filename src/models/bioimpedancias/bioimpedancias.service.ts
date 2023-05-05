@@ -1,8 +1,9 @@
-import { Inject, Injectable } from "@nestjs/common";
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateBioimpedanciaDto } from './dto/create-bioimpedancia.dto';
 import { UpdateBioimpedanciaDto } from './dto/update-bioimpedancia.dto';
-import { Repository } from "typeorm";
-import { Bioimpedancia } from "./entities/bioimpedancia.entity";
+import { Repository } from 'typeorm';
+import { Bioimpedancia } from './entities/bioimpedancia.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class BioimpedanciasService {
@@ -28,5 +29,12 @@ export class BioimpedanciasService {
 
   remove(id: number) {
     return this.bioimpedanciasRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Bioimpedancia> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.bioimpedanciasRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

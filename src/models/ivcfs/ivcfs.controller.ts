@@ -11,6 +11,7 @@ import { IvcfsService } from './ivcfs.service';
 import { CreateIvcfDto } from './dto/create-ivcf.dto';
 import { UpdateIvcfDto } from './dto/update-ivcf.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Ivcfs')
 @Controller('ivcfs')
@@ -25,6 +26,14 @@ export class IvcfsController {
   @Get()
   findAll() {
     return this.ivcfsService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.ivcfsService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

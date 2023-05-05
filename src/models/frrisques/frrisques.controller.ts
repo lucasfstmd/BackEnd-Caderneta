@@ -11,6 +11,7 @@ import { FrrisquesService } from './frrisques.service';
 import { CreateFrrisqueDto } from './dto/create-frrisque.dto';
 import { UpdateFrrisqueDto } from './dto/update-frrisque.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Frrisques')
 @Controller('frrisques')
@@ -25,6 +26,14 @@ export class FrrisquesController {
   @Get()
   findAll() {
     return this.frrisquesService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.frrisquesService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

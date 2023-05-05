@@ -1,8 +1,9 @@
-import { Inject, Injectable } from "@nestjs/common";
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateDiagnosticoDto } from './dto/create-diagnostico.dto';
 import { UpdateDiagnosticoDto } from './dto/update-diagnostico.dto';
-import { Repository } from "typeorm";
-import { Diagnostico } from "./entities/diagnostico.entity";
+import { Repository } from 'typeorm';
+import { Diagnostico } from './entities/diagnostico.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class DiagnosticosService {
@@ -28,5 +29,14 @@ export class DiagnosticosService {
 
   remove(id: number) {
     return this.diagnosticosRepository.delete(id);
+  }
+
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Diagnostico> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.diagnosticosRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

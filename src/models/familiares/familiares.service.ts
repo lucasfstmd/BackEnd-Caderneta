@@ -3,6 +3,7 @@ import { CreateFamiliareDto } from './dto/create-familiare.dto';
 import { UpdateFamiliareDto } from './dto/update-familiare.dto';
 import { Repository } from 'typeorm';
 import { Familiar } from './entities/familiar.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class FamiliaresService {
@@ -28,5 +29,12 @@ export class FamiliaresService {
 
   remove(id: number) {
     return this.familiaresRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Familiar> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.familiaresRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

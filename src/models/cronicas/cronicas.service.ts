@@ -3,6 +3,7 @@ import { CreateCronicaDto } from './dto/create-cronica.dto';
 import { UpdateCronicaDto } from './dto/update-cronica.dto';
 import { Repository } from 'typeorm';
 import { Cronica } from './entities/cronica.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class CronicasService {
@@ -28,5 +29,12 @@ export class CronicasService {
 
   remove(id: number) {
     return this.cronicasRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Cronica> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.cronicasRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

@@ -3,6 +3,7 @@ import { CreateBucalSaudeDto } from './dto/create-bucal_saude.dto';
 import { UpdateBucalSaudeDto } from './dto/update-bucal_saude.dto';
 import { Repository } from 'typeorm';
 import { BucalSaude } from './entities/bucal_saude.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class BucalSaudesService {
@@ -28,5 +29,12 @@ export class BucalSaudesService {
 
   remove(id: number) {
     return this.bucal_saudesRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<BucalSaude> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.bucal_saudesRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

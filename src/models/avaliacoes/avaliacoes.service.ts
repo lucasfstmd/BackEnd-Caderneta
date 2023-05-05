@@ -3,6 +3,7 @@ import { CreateAvaliacoeDto } from './dto/create-avaliacoe.dto';
 import { UpdateAvaliacoeDto } from './dto/update-avaliacoe.dto';
 import { Repository } from 'typeorm';
 import { Avaliacao } from './entities/avaliacao.entity';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @Injectable()
 export class AvaliacoesService {
@@ -28,5 +29,12 @@ export class AvaliacoesService {
 
   remove(id: number) {
     return this.avaliacoesRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Avaliacao> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.avaliacoesRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

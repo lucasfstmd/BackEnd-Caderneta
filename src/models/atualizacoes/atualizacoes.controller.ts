@@ -11,6 +11,7 @@ import { AtualizacoesService } from './atualizacoes.service';
 import { CreateAtualizacoeDto } from './dto/create-atualizacoe.dto';
 import { UpdateAtualizacoeDto } from './dto/update-atualizacoe.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Atualizacoes')
 @Controller('atualizacoes')
@@ -25,6 +26,14 @@ export class AtualizacoesController {
   @Get()
   findAll() {
     return this.atualizacoesService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.atualizacoesService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')

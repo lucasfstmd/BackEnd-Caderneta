@@ -3,6 +3,8 @@ import { CreateInfanciaDto } from './dto/create-infancia.dto';
 import { UpdateInfanciaDto } from './dto/update-infancia.dto';
 import { Repository } from 'typeorm';
 import { Infancia } from './entities/infancia.entity';
+import { FindPacienteIdDto } from "../core/dto/find-pacienteId.dto";
+import { Cronica } from "../cronicas/entities/cronica.entity";
 
 @Injectable()
 export class InfanciasService {
@@ -28,5 +30,12 @@ export class InfanciasService {
 
   remove(id: number) {
     return this.infanciasRepository.delete(id);
+  }
+
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Infancia> {
+    const paciente_id = findPacienteId.paciente_id;
+    return await this.infanciasRepository.findOne({
+      where: { paciente_id },
+    });
   }
 }

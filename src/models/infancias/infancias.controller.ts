@@ -11,6 +11,7 @@ import { InfanciasService } from './infancias.service';
 import { CreateInfanciaDto } from './dto/create-infancia.dto';
 import { UpdateInfanciaDto } from './dto/update-infancia.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { FindPacienteIdDto } from "../core/dto/find-pacienteId.dto";
 
 @ApiTags('Infancias')
 @Controller('infancias')
@@ -25,6 +26,14 @@ export class InfanciasController {
   @Get()
   findAll() {
     return this.infanciasService.findAll();
+  }
+
+  @Get('paciente/:paciente_id')
+  findByPacienteId(@Param('paciente_id') paciente: number) {
+    const findPacienteId: FindPacienteIdDto = {
+      paciente_id: paciente,
+    };
+    return this.infanciasService.findByPacienteId(findPacienteId);
   }
 
   @Get(':id')
