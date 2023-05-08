@@ -32,9 +32,9 @@ export class PclsService {
     return this.pclsRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Pcls> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Pcls[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.pclsRepository.findOne({
+    return await this.pclsRepository.find({
       where: { paciente_id },
     });
   }

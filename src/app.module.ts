@@ -29,6 +29,15 @@ import { PclsModule } from './models/pcls/pcls.module';
 import { PesoPerdasModule } from './models/peso_perdas/peso_perdas.module';
 import { PesosModule } from './models/pesos/pesos.module';
 import { PolifarmaciasModule } from './models/polifarmacias/polifarmacias.module';
+import { PreensaoForcasModule } from './models/preensao_forcas/preensao_forcas.module';
+import { PressaoControlesModule } from './models/pressao_controles/pressao_controles.module';
+import { QuedasModule } from './models/quedas/quedas.module';
+import { ReacoesModule } from './models/reacoes/reacoes.module';
+import { ReferenciasModule } from './models/referencias/referencias.module';
+import { SarcfsModule } from './models/sarcfs/sarcfs.module';
+import { SppbsModule } from './models/sppbs/sppbs.module';
+import { VacinasModule } from './models/vacinas/vacinas.module';
+import { VulnerabilidadesModule } from './models/vulnerabilidades/vulnerabilidades.module';
 
 @Module({
   controllers: [AppController],
@@ -61,6 +70,15 @@ import { PolifarmaciasModule } from './models/polifarmacias/polifarmacias.module
     PesoPerdasModule,
     PesosModule,
     PolifarmaciasModule,
+    PreensaoForcasModule,
+    PressaoControlesModule,
+    QuedasModule,
+    ReacoesModule,
+    ReferenciasModule,
+    SarcfsModule,
+    SppbsModule,
+    VacinasModule,
+    VulnerabilidadesModule,
   ],
   providers: [AppService],
 })

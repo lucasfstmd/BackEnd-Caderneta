@@ -31,9 +31,9 @@ export class HabitosService {
     return this.habitosRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Habito> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Habito[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.habitosRepository.findOne({
+    return await this.habitosRepository.find({
       where: { paciente_id },
     });
   }

@@ -31,9 +31,9 @@ export class CirurgiasService {
     return this.cirurgiasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Cirurgia> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Cirurgia[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.cirurgiasRepository.findOne({
+    return await this.cirurgiasRepository.find({
       where: { paciente_id },
     });
   }

@@ -31,9 +31,9 @@ export class FrrisquesService {
     return this.frrisquesRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Frrisque> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Frrisque[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.frrisquesRepository.findOne({
+    return await this.frrisquesRepository.find({
       where: { paciente_id },
     });
   }

@@ -31,9 +31,9 @@ export class PesoPerdasService {
     return this.pesoPerdasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<PesoPerda> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<PesoPerda[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.pesoPerdasRepository.findOne({
+    return await this.pesoPerdasRepository.find({
       where: { paciente_id },
     });
   }

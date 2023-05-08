@@ -32,9 +32,9 @@ export class InfanciasService {
     return this.infanciasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Infancia> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Infancia[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.infanciasRepository.findOne({
+    return await this.infanciasRepository.find({
       where: { paciente_id },
     });
   }

@@ -31,9 +31,9 @@ export class BucalSaudesService {
     return this.bucal_saudesRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<BucalSaude> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<BucalSaude[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.bucal_saudesRepository.findOne({
+    return await this.bucal_saudesRepository.find({
       where: { paciente_id },
     });
   }

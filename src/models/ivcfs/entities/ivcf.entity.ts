@@ -96,8 +96,8 @@ export class Ivcf {
   p22: number;
 
   @CreateDateColumn()
-  created: number;
+  created: Date;
 
   @UpdateDateColumn()
-  updated: number;
+  updated: Date;
 }

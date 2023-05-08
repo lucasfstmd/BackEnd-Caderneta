@@ -5,7 +5,6 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Paciente } from '../../pacientes/entities/paciente.entity';
 
 @Entity('bioimpedancias')
 export class Bioimpedancia {
@@ -94,5 +93,5 @@ export class Bioimpedancia {
   created: Date;
 
   @UpdateDateColumn()
-  updated: number;
+  updated: Date;
 }

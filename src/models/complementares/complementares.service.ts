@@ -31,9 +31,9 @@ export class ComplementaresService {
     return this.complementaresRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Complementar> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Complementar[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.complementaresRepository.findOne({
+    return await this.complementaresRepository.find({
       where: { paciente_id },
     });
   }

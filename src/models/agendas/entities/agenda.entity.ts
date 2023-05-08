@@ -12,10 +12,10 @@ import { Paciente } from '../../pacientes/entities/paciente.entity';
 @Entity('agendas')
 export class Agenda {
   @PrimaryGeneratedColumn()
-  id?: number;
+  id: number;
 
   @Column()
-  paciente_id?: number;
+  paciente_id: number;
 
   @Column({ length: 50 })
   data: string;

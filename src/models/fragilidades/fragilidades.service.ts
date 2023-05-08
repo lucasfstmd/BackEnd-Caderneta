@@ -33,9 +33,9 @@ export class FragilidadesService {
 
   async findByPacienteId(
     findPacienteId: FindPacienteIdDto,
-  ): Promise<Fragilidade> {
+  ): Promise<Fragilidade[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.fragilidadesRepository.findOne({
+    return await this.fragilidadesRepository.find({
       where: { paciente_id },
     });
   }

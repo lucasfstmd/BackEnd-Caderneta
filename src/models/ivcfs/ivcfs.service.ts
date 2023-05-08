@@ -31,9 +31,9 @@ export class IvcfsService {
     return this.ivcfsRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Ivcf> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Ivcf[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.ivcfsRepository.findOne({
+    return await this.ivcfsRepository.find({
       where: { paciente_id },
     });
   }

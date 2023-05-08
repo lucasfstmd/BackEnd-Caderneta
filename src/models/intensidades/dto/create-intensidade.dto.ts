@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDate, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class CreateIntensidadeDto {
   @ApiProperty()
@@ -7,7 +7,7 @@ export class CreateIntensidadeDto {
   paciente_id: number;
 
   @ApiProperty()
-  @IsDate()
+  @IsString()
   data: Date;
 
   @ApiProperty()

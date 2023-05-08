@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateAtualizacoeDto } from './create-atualizacoe.dto';
-import { IsDate, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class UpdateAtualizacoeDto extends PartialType(CreateAtualizacoeDto) {
   @ApiProperty()
@@ -8,7 +8,7 @@ export class UpdateAtualizacoeDto extends PartialType(CreateAtualizacoeDto) {
   paciente_id: number;
 
   @ApiProperty()
-  @IsDate()
+  @IsString()
   data: Date;
 
   @ApiProperty()

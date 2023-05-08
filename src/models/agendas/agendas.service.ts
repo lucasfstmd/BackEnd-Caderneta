@@ -31,9 +31,9 @@ export class AgendasService {
     return this.agendaRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Agenda> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Agenda[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.agendaRepository.findOne({
+    return await this.agendaRepository.find({
       where: { paciente_id },
     });
   }

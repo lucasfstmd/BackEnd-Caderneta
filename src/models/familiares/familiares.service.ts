@@ -31,9 +31,9 @@ export class FamiliaresService {
     return this.familiaresRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Familiar> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Familiar[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.familiaresRepository.findOne({
+    return await this.familiaresRepository.find({
       where: { paciente_id },
     });
   }

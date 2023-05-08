@@ -31,9 +31,9 @@ export class ObitosService {
     return this.obitosRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Obito> {
+  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Obito[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.obitosRepository.findOne({
+    return await this.obitosRepository.find({
       where: { paciente_id },
     });
   }

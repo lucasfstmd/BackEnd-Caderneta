@@ -5,7 +5,6 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Paciente } from '../../pacientes/entities/paciente.entity';
 
 @Entity('complementares')
 export class Complementar {
@@ -39,4 +38,3 @@ export class Complementar {
   @UpdateDateColumn()
   updated: Date;
 }
-

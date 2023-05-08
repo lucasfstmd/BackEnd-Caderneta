@@ -33,9 +33,9 @@ export class DiagnosticosService {
 
   async findByPacienteId(
     findPacienteId: FindPacienteIdDto,
-  ): Promise<Diagnostico> {
+  ): Promise<Diagnostico[]> {
     const paciente_id = findPacienteId.paciente_id;
-    return await this.diagnosticosRepository.findOne({
+    return await this.diagnosticosRepository.find({
       where: { paciente_id },
     });
   }

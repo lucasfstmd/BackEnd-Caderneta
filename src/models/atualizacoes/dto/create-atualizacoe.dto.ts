@@ -1,4 +1,4 @@
-import { IsDate, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateAtualizacoeDto {
@@ -7,7 +7,7 @@ export class CreateAtualizacoeDto {
   paciente_id: number;
 
   @ApiProperty()
-  @IsDate()
+  @IsString()
   data: Date;
 
   @ApiProperty()
