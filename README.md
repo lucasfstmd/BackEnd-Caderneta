@@ -28,6 +28,8 @@ BackEnd do sistema Caderneta.
 
 ## Installation
 
+Clone esse repositorio.
+
 ```bash
 $ npm install
 ```
