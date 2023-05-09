@@ -4,7 +4,7 @@ import { LoginRequest } from './models/LoginRequest';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Login')
-@Controller()
+@Controller('api/auth')
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
