@@ -11,10 +11,10 @@ import { InfanciasService } from './infancias.service';
 import { CreateInfanciaDto } from './dto/create-infancia.dto';
 import { UpdateInfanciaDto } from './dto/update-infancia.dto';
 import { ApiTags } from '@nestjs/swagger';
-import { FindPacienteIdDto } from "../core/dto/find-pacienteId.dto";
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Infancias')
-@Controller('infancias')
+@Controller('api/v1/infancias')
 export class InfanciasController {
   constructor(private readonly infanciasService: InfanciasService) {}
 

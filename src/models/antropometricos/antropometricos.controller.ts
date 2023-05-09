@@ -14,7 +14,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Antropometricos')
-@Controller('antropometricos')
+@Controller('api/v1/antropometricos')
 export class AntropometricosController {
   constructor(
     private readonly antropometricosService: AntropometricosService,

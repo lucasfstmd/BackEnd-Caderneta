@@ -14,7 +14,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Vulnerabilidades')
-@Controller('vulnerabilidades')
+@Controller('api/v1/vulnerabilidades')
 export class VulnerabilidadesController {
   constructor(
     private readonly vulnerabilidadesService: VulnerabilidadesService,

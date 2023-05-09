@@ -11,10 +11,10 @@ import { GlicemiaControlesService } from './glicemia_controles.service';
 import { CreateGlicemiaControleDto } from './dto/create-glicemia_controle.dto';
 import { UpdateGlicemiaControleDto } from './dto/update-glicemia_controle.dto';
 import { ApiTags } from '@nestjs/swagger';
-import { FindPacienteIdDto } from "../core/dto/find-pacienteId.dto";
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Glicemia Controles')
-@Controller('glicemia-controles')
+@Controller('api/v1/glicemia-controles')
 export class GlicemiaControlesController {
   constructor(
     private readonly glicemiaControlesService: GlicemiaControlesService,

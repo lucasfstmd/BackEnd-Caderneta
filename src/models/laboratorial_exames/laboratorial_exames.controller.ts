@@ -14,7 +14,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Laboratorial-Exames')
-@Controller('laboratorial-exames')
+@Controller('api/v1/laboratorial-exames')
 export class LaboratorialExamesController {
   constructor(
     private readonly laboratorialExamesService: LaboratorialExamesService,

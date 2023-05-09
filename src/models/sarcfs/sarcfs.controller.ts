@@ -14,7 +14,7 @@ import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Sarcfs')
-@Controller('sarcfs')
+@Controller('api/v1/sarcfs')
 export class SarcfsController {
   constructor(private readonly sarcfsService: SarcfsService) {}
 

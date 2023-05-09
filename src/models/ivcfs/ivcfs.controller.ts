@@ -14,7 +14,7 @@ import { ApiTags } from '@nestjs/swagger';
 import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 
 @ApiTags('Ivcfs')
-@Controller('ivcfs')
+@Controller('api/v1/ivcfs')
 export class IvcfsController {
   constructor(private readonly ivcfsService: IvcfsService) {}
 

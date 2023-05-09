@@ -14,7 +14,7 @@ import { FindUsuarioDto } from './dto/find-usuario.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Usuarios')
-@Controller('usuarios')
+@Controller('api/v1/usuarios')
 export class UsuariosController {
   constructor(private readonly usuariosService: UsuariosService) {}
 

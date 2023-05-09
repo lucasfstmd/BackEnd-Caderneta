@@ -14,7 +14,7 @@ import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Polifarmacisa')
-@Controller('polifarmacias')
+@Controller('api/v1/polifarmacias')
 export class PolifarmaciasController {
   constructor(private readonly polifarmaciasService: PolifarmaciasService) {}
 

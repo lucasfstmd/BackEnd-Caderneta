@@ -14,7 +14,7 @@ import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('Pcls')
-@Controller('pcls')
+@Controller('api/v1/pcls')
 export class PclsController {
   constructor(private readonly pclsService: PclsService) {}
 
