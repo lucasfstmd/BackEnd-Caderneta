@@ -32,6 +32,11 @@ export class PacientesController {
     return this.pacientesService.findOne(+id);
   }
 
+  @Get('ubs/:ubs')
+  findByUbs(@Param('ubs') ubs: string) {
+    return this.pacientesService.findByUbs(ubs);
+  }
+
   @Patch(':id')
   update(
     @Param('id') id: string,

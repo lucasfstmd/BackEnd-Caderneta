@@ -29,4 +29,8 @@ export class PacientesService {
   remove(id: number) {
     return this.pacientesRepository.delete(id);
   }
+
+  findByUbs(ubs: string) {
+    return this.pacientesRepository.find({ where: { ubs } });
+  }
 }
