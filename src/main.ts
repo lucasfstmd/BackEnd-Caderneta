@@ -4,7 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {cors: true});
 
   const config = new DocumentBuilder()
     .setTitle('API BackEnd Caderneta')
@@ -25,6 +25,6 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(8080);
+  await app.listen(3333);
 }
 bootstrap();
