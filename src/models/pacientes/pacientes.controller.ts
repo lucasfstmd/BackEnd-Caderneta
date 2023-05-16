@@ -27,14 +27,19 @@ export class PacientesController {
     return this.pacientesService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.pacientesService.findOne(+id);
-  }
-
   @Get('ubs/:ubs')
   findByUbs(@Param('ubs') ubs: string) {
     return this.pacientesService.findByUbs(ubs);
+  }
+
+  @Get('nome/:nome')
+  findByNome(@Param('nome') nome: string) {
+    return this.pacientesService.findByName(nome);
+  }
+
+  @Get(':id')
+  findOne(@Param('id') id: string) {
+    return this.pacientesService.findOne(+id);
   }
 
   @Patch(':id')

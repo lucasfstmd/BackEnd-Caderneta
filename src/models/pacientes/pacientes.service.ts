@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { CreatePacienteDto } from './dto/create-paciente.dto';
 import { UpdatePacienteDto } from './dto/update-paciente.dto';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { Paciente } from './entities/paciente.entity';
 
 @Injectable()
@@ -33,4 +33,8 @@ export class PacientesService {
   findByUbs(ubs: string) {
     return this.pacientesRepository.find({ where: { ubs } });
   }
+
+  findByName(nome: string) {
+    return this.pacientesRepository.find({ where: { nome: Like(`%${nome}%`) } });
+  }  
 }
