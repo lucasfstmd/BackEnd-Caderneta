@@ -38,6 +38,7 @@ import { SarcfsModule } from './models/sarcfs/sarcfs.module';
 import { SppbsModule } from './models/sppbs/sppbs.module';
 import { VacinasModule } from './models/vacinas/vacinas.module';
 import { VulnerabilidadesModule } from './models/vulnerabilidades/vulnerabilidades.module';
+import { UbsModule } from './models/ubs/ubs.module';
 
 @Module({
   controllers: [AppController],
@@ -79,6 +80,7 @@ import { VulnerabilidadesModule } from './models/vulnerabilidades/vulnerabilidad
     SppbsModule,
     VacinasModule,
     VulnerabilidadesModule,
+    UbsModule,
   ],
   providers: [AppService],
 })
