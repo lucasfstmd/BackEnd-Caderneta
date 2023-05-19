@@ -6,6 +6,7 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { PacientesService } from './pacientes.service';
 import { CreatePacienteDto } from './dto/create-paciente.dto';
@@ -35,6 +36,11 @@ export class PacientesController {
   @Get('nome/:nome')
   findByNome(@Param('nome') nome: string) {
     return this.pacientesService.findByName(nome);
+  }
+
+  @Get('nome-ubs')
+  findByNomeAndUbs(@Query('nome') nome: string, @Query('ubs') ubs: string) {
+    return this.pacientesService.findByNameAndUbs(nome, ubs);
   }
 
   @Get(':id')

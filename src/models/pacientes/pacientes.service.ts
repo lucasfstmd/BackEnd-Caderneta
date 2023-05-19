@@ -37,4 +37,14 @@ export class PacientesService {
   findByName(nome: string) {
     return this.pacientesRepository.find({ where: { nome: Like(`%${nome}%`) } });
   }  
+
+  async findByNameAndUbs(nome: string, ubs: string) {
+    const pacientesPorNome = await this.pacientesRepository.find({ where: { nome: Like(`%${nome}%`) } });
+    const pacientesPorUbs = await this.pacientesRepository.find({ where: { ubs } });
+  
+    const pacientesComb = pacientesPorNome.filter(paciente => pacientesPorUbs.some(p => p.id === paciente.id));
+  
+    return pacientesComb;
+  }
+  
 }
