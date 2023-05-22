@@ -1,4 +1,4 @@
-import { IsBoolean, IsDate, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
 
 export class CreatePacienteDto {
@@ -51,8 +51,8 @@ export class CreatePacienteDto {
   nascimento: string;
 
   @ApiProperty()
-  @IsBoolean()
-  sabe_ler_escrever: boolean;
+  @IsNumber()
+  sabe_ler_escrever: number;
 
   @ApiProperty()
   @IsString()
@@ -91,8 +91,8 @@ export class CreatePacienteDto {
   alergia_maior_gravidade: string;
 
   @ApiProperty()
-  @IsBoolean()
-  deficiencia: boolean;
+  @IsNumber()
+  deficiencia: number;
 
   @ApiProperty()
   @IsString()
@@ -105,10 +105,6 @@ export class CreatePacienteDto {
   @ApiProperty()
   @IsString()
   grupo_sanguineo: string;
-
-  @ApiProperty()
-  @IsString()
-  fator_rh: string;
 
   @ApiProperty()
   @IsString()
@@ -163,8 +159,8 @@ export class CreatePacienteDto {
   data_nascimento: string;
 
   @ApiProperty()
-  @IsBoolean()
-  possui_internet: boolean;
+  @IsNumber()
+  possui_internet: number;
 
   @ApiProperty()
   @IsString()

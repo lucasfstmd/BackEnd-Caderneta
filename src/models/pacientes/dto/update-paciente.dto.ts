@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from "@nestjs/swagger";
 import { CreatePacienteDto } from './create-paciente.dto';
-import { IsBoolean, IsDate, IsString } from 'class-validator';
+import { IsBoolean, IsDate, IsNumber, IsString } from 'class-validator';
 
 export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {
   @ApiProperty()
@@ -52,8 +52,8 @@ export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {
   nascimento: string;
 
   @ApiProperty()
-  @IsBoolean()
-  sabe_ler_escrever: boolean;
+  @IsNumber()
+  sabe_ler_escrever: number;
 
   @ApiProperty()
   @IsString()
@@ -92,8 +92,8 @@ export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {
   alergia_maior_gravidade: string;
 
   @ApiProperty()
-  @IsBoolean()
-  deficiencia: boolean;
+  @IsNumber()
+  deficiencia: number;
 
   @ApiProperty()
   @IsString()
@@ -106,11 +106,7 @@ export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {
   @ApiProperty()
   @IsString()
   grupo_sanguineo: string;
-
-  @ApiProperty()
-  @IsString()
-  fator_rh: string;
-
+  
   @ApiProperty()
   @IsString()
   rua: string;
@@ -164,8 +160,8 @@ export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {
   data_nascimento: string;
 
   @ApiProperty()
-  @IsBoolean()
-  possui_internet: boolean;
+  @IsNumber()
+  possui_internet: number;
 
   @ApiProperty()
   @IsString()

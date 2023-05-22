@@ -26,13 +26,13 @@ export class Paciente {
   @Column({ length: 50, nullable: true })
   identidade: string;
 
-  @Column({ length: 250, nullable: true })
+  @Column({ length: 50, nullable: true })
   cpf: string;
 
   @Column({ length: 250, nullable: true })
   nome_mae: string;
 
-  @Column({ length: 250, nullable: true })
+  @Column({ length: 100, nullable: true })
   sexo: string;
 
   @Column({ length: 250, nullable: true })
@@ -48,7 +48,7 @@ export class Paciente {
   nascimento: string;
 
   @Column({ type: 'tinyint', default: 0 })
-  sabe_ler_escrever: boolean;
+  sabe_ler_escrever: number;
 
   @Column({ length: 250, nullable: true })
   escolaridade: string;
@@ -78,7 +78,7 @@ export class Paciente {
   alergia_maior_gravidade: string;
 
   @Column({ type: 'tinyint', default: 0 })
-  deficiencia: boolean;
+  deficiencia: number;
 
   @Column({ length: 250, nullable: true })
   deficiencia_qual: string;
@@ -126,13 +126,13 @@ export class Paciente {
   email: string;
 
   @Column({ length: 250, nullable: true })
-  qual_etnia: string;
+  qual_etinia: string;
 
-  @Column({ length: 50, nullable: true })
-  data_nascimento: string;
+  @Column({ type: 'date', nullable: true })
+  data_nascimento: Date;
 
   @Column({ type: 'tinyint', default: 0, nullable: true })
-  possui_internet: boolean;
+  possui_internet: number;
 
   @Column({ length: 100, nullable: true })
   numero_identificacao: string;
