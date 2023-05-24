@@ -1,11 +1,11 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateReferenciaDto } from './create-referencia.dto';
-import { IsBoolean, IsDate, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class UpdateReferenciaDto extends PartialType(CreateReferenciaDto) {
   @ApiProperty()
   @IsNumber()
-  pacienteId: number;
+  paciente_id: number;
 
   @ApiProperty()
   @IsString()
@@ -32,8 +32,8 @@ export class UpdateReferenciaDto extends PartialType(CreateReferenciaDto) {
   celular: string;
 
   @ApiProperty()
-  @IsBoolean()
-  mora_com_voce: boolean;
+  @IsNumber()
+  mora_com_voce: number;
 
   @ApiProperty()
   @IsString()

@@ -4,7 +4,7 @@ import { IsBoolean, IsNumber, IsString } from "class-validator";
 export class CreateReferenciaDto {
   @ApiProperty()
   @IsNumber()
-  pacienteId: number;
+  paciente_id: number;
 
   @ApiProperty()
   @IsString()
@@ -31,8 +31,8 @@ export class CreateReferenciaDto {
   celular: string;
 
   @ApiProperty()
-  @IsBoolean()
-  mora_com_voce: boolean;
+  @IsNumber()
+  mora_com_voce: number;
 
   @ApiProperty()
   @IsString()

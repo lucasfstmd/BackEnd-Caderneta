@@ -26,8 +26,8 @@ export class Referencia {
   @Column({ length: 50 })
   celular: string;
 
-  @Column({ type: 'tinyint' })
-  mora_com_voce: boolean;
+  @Column({ type: 'tinyint', nullable: true })
+  mora_com_voce: number;
 
   @Column({ type: 'date', nullable: true })
   data_informacao: Date;
