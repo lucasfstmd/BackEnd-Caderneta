@@ -9,7 +9,7 @@ export class Obito {
   paciente_id: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  obito: boolean;
+  obito: number;
 
   @Column({ length: 250 })
   quando: string;

@@ -7,8 +7,8 @@ export class CreateObitoDto {
   paciente_id: number;
 
   @ApiProperty()
-  @IsBoolean()
-  obito: boolean;
+  @IsNumber()
+  obito: number;
 
   @ApiProperty()
   @IsString()

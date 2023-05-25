@@ -12,7 +12,7 @@ export class DiagnosticosService {
     private diagnosticosRepository: Repository<Diagnostico>,
   ) {}
   create(createDiagnosticoDto: CreateDiagnosticoDto) {
-    return this.diagnosticosRepository.create(createDiagnosticoDto);
+    return this.diagnosticosRepository.save(createDiagnosticoDto);
   }
 
   findAll() {

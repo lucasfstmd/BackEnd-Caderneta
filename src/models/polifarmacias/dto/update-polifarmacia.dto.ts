@@ -8,6 +8,6 @@ export class UpdatePolifarmaciaDto extends PartialType(CreatePolifarmaciaDto) {
   paciente_id: number;
 
   @ApiProperty()
-  @IsBoolean()
-  uso_concomitante: boolean;
+  @IsNumber()
+  uso_concomitante: number;
 }

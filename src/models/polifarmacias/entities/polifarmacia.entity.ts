@@ -9,7 +9,7 @@ export class Polifarmacia {
   paciente_id: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  uso_concomitante: boolean;
+  uso_concomitante: number;
 
   @CreateDateColumn()
   created: Date;
