@@ -4,7 +4,7 @@ import { IsNumber, IsString } from 'class-validator';
 export class CreateReacoeDto {
   @ApiProperty()
   @IsNumber()
-  pacienteId: number;
+  paciente_id: number;
 
   @ApiProperty()
   @IsString()

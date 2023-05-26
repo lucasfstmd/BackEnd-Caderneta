@@ -5,7 +5,7 @@ import { IsNumber, IsString } from 'class-validator';
 export class UpdateReacoeDto extends PartialType(CreateReacoeDto) {
   @ApiProperty()
   @IsNumber()
-  pacienteId: number;
+  paciente_id: number;
 
   @ApiProperty()
   @IsString()
