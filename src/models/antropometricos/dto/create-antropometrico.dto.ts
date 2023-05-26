@@ -24,5 +24,5 @@ export class CreateAntropometricoDto {
 
   @ApiProperty()
   @IsNumber()
-  perimetroPanturrilha: number;
+  perimetro_panturrilha: number;
 }

@@ -12,7 +12,7 @@ export class PesoPerda {
   ano: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  perda_peso: boolean;
+  perda_peso: number;
 
   @CreateDateColumn()
   created: Date;

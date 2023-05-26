@@ -17,17 +17,17 @@ export class Antropometricos {
   @Column({ nullable: true })
   ano: number;
 
-  @Column({ nullable: true })
+  @Column({ type: 'float', nullable: true })
   peso: number;
 
-  @Column({ nullable: true })
+  @Column({ type: 'float', nullable: true })
   altura: number;
 
-  @Column({ nullable: true })
+  @Column({ type: 'float', nullable: true })
   imc: number;
 
-  @Column({ nullable: true, name: 'perimetro_panturrilha' })
-  perimetroPanturrilha: number;
+  @Column({ type: 'float', nullable: true })
+  perimetro_panturrilha: number;
 
   @CreateDateColumn()
   created: Date;

@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsBoolean, IsNumber } from 'class-validator';
+import { IsNumber } from 'class-validator';
 
 export class CreatePesoPerdaDto {
   @ApiProperty()
@@ -11,6 +11,6 @@ export class CreatePesoPerdaDto {
   ano: number;
 
   @ApiProperty()
-  @IsBoolean()
-  perda_peso: boolean;
+  @IsNumber()
+  perda_peso: number;
 }

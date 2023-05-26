@@ -16,5 +16,5 @@ export class CreateReacoeDto {
 
   @ApiProperty()
   @IsString()
-  reacoesAdversasOuAlergicas: string;
+  reacoes_adversas_ou_alergicas: string;
 }

@@ -27,5 +27,5 @@ export class UpdateAntropometricoDto extends PartialType(
 
   @ApiProperty()
   @IsNumber()
-  perimetroPanturrilha: number;
+  perimetro_panturrilha: number;
 }
