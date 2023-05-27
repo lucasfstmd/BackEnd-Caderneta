@@ -44,24 +44,24 @@ export class UpdateVulnerabilidadeDto extends PartialType(CreateVulnerabilidadeD
   limitacao6: string;
 
   @ApiProperty()
-  @IsBoolean()
-  incapacidades1: boolean;
+  @IsNumber()
+  incapacidades1: number;
 
   @ApiProperty()
-  @IsBoolean()
-  incapacidades2: boolean;
+  @IsNumber()
+  incapacidades2: number;
 
   @ApiProperty()
-  @IsBoolean()
-  incapacidades3: boolean;
+  @IsNumber()
+  incapacidades3: number;
 
   @ApiProperty()
-  @IsBoolean()
-  incapacidades4: boolean;
+  @IsNumber()
+  incapacidades4: number;
 
   @ApiProperty()
-  @IsBoolean()
-  incapacidades5: boolean;
+  @IsNumber()
+  incapacidades5: number;
 
   @ApiProperty()
   @IsNumber()

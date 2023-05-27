@@ -36,19 +36,19 @@ export class Vulnerabilidade {
   limitacao6: string;
 
   @Column({ type: 'tinyint', nullable: true })
-  incapacidades1: boolean;
+  incapacidades1: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  incapacidades2: boolean;
+  incapacidades2: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  incapacidades3: boolean;
+  incapacidades3: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  incapacidades4: boolean;
+  incapacidades4: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  incapacidades5: boolean;
+  incapacidades5: number;
 
   @Column({ nullable: true })
   pontuacao_total: number;
