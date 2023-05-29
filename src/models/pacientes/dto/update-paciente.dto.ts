@@ -1,4 +1,4 @@
-import { ApiProperty, PartialType } from "@nestjs/swagger";
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreatePacienteDto } from './create-paciente.dto';
 import { IsBoolean, IsDate, IsNumber, IsString } from 'class-validator';
 
@@ -106,7 +106,7 @@ export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {
   @ApiProperty()
   @IsString()
   grupo_sanguineo: string;
-  
+
   @ApiProperty()
   @IsString()
   rua: string;

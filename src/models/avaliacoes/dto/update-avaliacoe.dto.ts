@@ -1,4 +1,4 @@
-import { ApiProperty, PartialType } from "@nestjs/swagger";
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateAvaliacoeDto } from './create-avaliacoe.dto';
 import { IsNumber, IsString } from 'class-validator';
 

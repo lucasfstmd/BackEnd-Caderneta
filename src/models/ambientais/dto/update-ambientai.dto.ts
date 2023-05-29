@@ -1,4 +1,4 @@
-import { ApiProperty, PartialType } from "@nestjs/swagger";
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateAmbientaiDto } from './create-ambientai.dto';
 import { IsBoolean, IsNumber } from 'class-validator';
 

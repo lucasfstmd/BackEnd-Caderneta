@@ -31,7 +31,9 @@ export class AntropometricosService {
     return this.antropometricasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Antropometricos[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Antropometricos[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.antropometricasRepository.find({
       where: { paciente_id },

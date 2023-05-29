@@ -1,10 +1,10 @@
-import { Inject, Injectable } from "@nestjs/common";
+import { Inject, Injectable } from '@nestjs/common';
 import { CreatePclDto } from './dto/create-pcl.dto';
 import { UpdatePclDto } from './dto/update-pcl.dto';
-import { FindPacienteIdDto } from "../core/dto/find-pacienteId.dto";
-import { Obito } from "../obitos/entities/obito.entity";
-import { Pcls } from "./entities/pcls.entity";
-import { Repository } from "typeorm";
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
+import { Obito } from '../obitos/entities/obito.entity';
+import { Pcls } from './entities/pcls.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class PclsService {

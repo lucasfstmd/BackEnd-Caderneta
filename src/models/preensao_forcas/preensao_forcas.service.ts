@@ -31,7 +31,9 @@ export class PreensaoForcasService {
     return this.pressaoForcasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<PreensaoForca[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<PreensaoForca[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.pressaoForcasRepository.find({
       where: { paciente_id },

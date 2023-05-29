@@ -2,7 +2,9 @@ import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateVulnerabilidadeDto } from './create-vulnerabilidade.dto';
 import { IsBoolean, IsNumber, IsString } from 'class-validator';
 
-export class UpdateVulnerabilidadeDto extends PartialType(CreateVulnerabilidadeDto) {
+export class UpdateVulnerabilidadeDto extends PartialType(
+  CreateVulnerabilidadeDto,
+) {
   @ApiProperty()
   @IsNumber()
   paciente_id: number;

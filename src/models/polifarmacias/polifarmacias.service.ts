@@ -31,7 +31,9 @@ export class PolifarmaciasService {
     return this.polifarmaciasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Polifarmacia[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Polifarmacia[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.polifarmaciasRepository.find({
       where: { paciente_id },

@@ -31,7 +31,9 @@ export class BioimpedanciasService {
     return this.bioimpedanciasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Bioimpedancia[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Bioimpedancia[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.bioimpedanciasRepository.find({
       where: { paciente_id },

@@ -38,4 +38,3 @@ export class Avaliacao {
   @UpdateDateColumn()
   updated: Date;
 }
-

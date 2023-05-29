@@ -31,7 +31,9 @@ export class AvaliacoesService {
     return this.avaliacoesRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Avaliacao[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Avaliacao[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.avaliacoesRepository.find({
       where: { paciente_id },

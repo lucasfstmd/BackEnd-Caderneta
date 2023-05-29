@@ -34,7 +34,9 @@ export class LaboratorialExamesService {
     return this.laburatorialExamesRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<LaboratorialExames[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<LaboratorialExames[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.laburatorialExamesRepository.find({
       where: { paciente_id },

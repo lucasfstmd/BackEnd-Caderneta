@@ -1,6 +1,6 @@
-import { ApiProperty, PartialType } from "@nestjs/swagger";
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateIvcfDto } from './create-ivcf.dto';
-import { IsBoolean, IsNumber } from "class-validator";
+import { IsBoolean, IsNumber } from 'class-validator';
 
 export class UpdateIvcfDto extends PartialType(CreateIvcfDto) {
   @ApiProperty()

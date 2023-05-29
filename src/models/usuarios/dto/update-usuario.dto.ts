@@ -1,4 +1,4 @@
-import { ApiProperty, PartialType } from "@nestjs/swagger";
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateUsuarioDto } from './create-usuario.dto';
 import {
   IsEmail,

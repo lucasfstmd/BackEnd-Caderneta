@@ -26,4 +26,3 @@ export class Atualizacoes {
   @UpdateDateColumn()
   updated: Date;
 }
-

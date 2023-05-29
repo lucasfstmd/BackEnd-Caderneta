@@ -31,7 +31,9 @@ export class IntensidadesService {
     return this.intensidadesRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Intensidade[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Intensidade[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.intensidadesRepository.find({
       where: { paciente_id },

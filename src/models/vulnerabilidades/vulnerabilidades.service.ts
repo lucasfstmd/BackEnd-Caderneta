@@ -31,7 +31,9 @@ export class VulnerabilidadesService {
     return this.vulnerabilidadesRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Vulnerabilidade[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Vulnerabilidade[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.vulnerabilidadesRepository.find({
       where: { paciente_id },

@@ -31,7 +31,9 @@ export class ReferenciasService {
     return this.referenciasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Referencia[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Referencia[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.referenciasRepository.find({
       where: { paciente_id },

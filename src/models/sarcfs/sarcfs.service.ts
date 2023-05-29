@@ -3,8 +3,8 @@ import { CreateSarcfDto } from './dto/create-sarcf.dto';
 import { UpdateSarcfDto } from './dto/update-sarcf.dto';
 import { Repository } from 'typeorm';
 import { Sarcf } from './entities/sarcf.entity';
-import { FindPacienteIdDto } from "../core/dto/find-pacienteId.dto";
-import { Referencia } from "../referencias/entities/referencia.entity";
+import { FindPacienteIdDto } from '../core/dto/find-pacienteId.dto';
+import { Referencia } from '../referencias/entities/referencia.entity';
 
 @Injectable()
 export class SarcfsService {

@@ -31,7 +31,9 @@ export class CronicasService {
     return this.cronicasRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Cronica[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Cronica[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.cronicasRepository.find({
       where: { paciente_id },

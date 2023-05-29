@@ -1,4 +1,4 @@
-import { ApiProperty, PartialType } from "@nestjs/swagger";
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateAntropometricoDto } from './create-antropometrico.dto';
 import { IsNumber } from 'class-validator';
 

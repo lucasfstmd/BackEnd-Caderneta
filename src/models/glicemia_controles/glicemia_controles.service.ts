@@ -24,14 +24,19 @@ export class GlicemiaControlesService {
   }
 
   update(id: number, updateGlicemiaControleDto: UpdateGlicemiaControleDto) {
-    return this.glicemiaControlesRepository.update(id, updateGlicemiaControleDto);
+    return this.glicemiaControlesRepository.update(
+      id,
+      updateGlicemiaControleDto,
+    );
   }
 
   remove(id: number) {
     return this.glicemiaControlesRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<GlicemiaControle[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<GlicemiaControle[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.glicemiaControlesRepository.find({
       where: { paciente_id },

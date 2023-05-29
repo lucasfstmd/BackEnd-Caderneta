@@ -31,7 +31,9 @@ export class PressaoControlesService {
     return this.pressaoControlesRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<PressaoControle[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<PressaoControle[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.pressaoControlesRepository.find({
       where: { paciente_id },

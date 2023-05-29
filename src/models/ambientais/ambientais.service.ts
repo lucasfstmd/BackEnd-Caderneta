@@ -31,7 +31,9 @@ export class AmbientaisService {
     return this.ambientaisRepository.delete(id);
   }
 
-  async findByPacienteId(findPacienteId: FindPacienteIdDto): Promise<Ambientais[]> {
+  async findByPacienteId(
+    findPacienteId: FindPacienteIdDto,
+  ): Promise<Ambientais[]> {
     const paciente_id = findPacienteId.paciente_id;
     return await this.ambientaisRepository.find({
       where: { paciente_id },

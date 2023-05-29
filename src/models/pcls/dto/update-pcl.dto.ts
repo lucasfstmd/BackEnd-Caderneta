@@ -1,6 +1,6 @@
-import { ApiProperty, PartialType } from "@nestjs/swagger";
+import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreatePclDto } from './create-pcl.dto';
-import { IsNumber } from "class-validator";
+import { IsNumber } from 'class-validator';
 
 export class UpdatePclDto extends PartialType(CreatePclDto) {
   @ApiProperty()

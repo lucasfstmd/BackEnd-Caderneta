@@ -2,7 +2,9 @@ import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateLaboratorialExameDto } from './create-laboratorial_exame.dto';
 import { IsNumber, IsString } from 'class-validator';
 
-export class UpdateLaboratorialExameDto extends PartialType(CreateLaboratorialExameDto) {
+export class UpdateLaboratorialExameDto extends PartialType(
+  CreateLaboratorialExameDto,
+) {
   @ApiProperty()
   @IsNumber()
   paciente_id: number;
