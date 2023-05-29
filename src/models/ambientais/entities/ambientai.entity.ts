@@ -18,37 +18,37 @@ export class Ambientais {
   ano: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p1: boolean;
+  p1: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p2: boolean;
+  p2: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p3: boolean;
+  p3: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p4: boolean;
+  p4: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p5: boolean;
+  p5: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p6: boolean;
+  p6: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p7: boolean;
+  p7: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p8: boolean;
+  p8: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p9: boolean;
+  p9: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: false })
-  p10: boolean;
+  p10: number;
 
   @Column({ type: 'tinyint', default: 0, nullable: true })
-  p11: boolean;
+  p11: number;
 
   @CreateDateColumn()
   created: Date;

@@ -12,46 +12,46 @@ export class UpdateAmbientaiDto extends PartialType(CreateAmbientaiDto) {
   ano: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p1: boolean;
+  @IsNumber()
+  p1: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p2: boolean;
+  @IsNumber()
+  p2: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p3: boolean;
+  @IsNumber()
+  p3: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p4: boolean;
+  @IsNumber()
+  p4: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p5: boolean;
+  @IsNumber()
+  p5: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p6: boolean;
+  @IsNumber()
+  p6: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p7: boolean;
+  @IsNumber()
+  p7: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p8: boolean;
+  @IsNumber()
+  p8: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p9: boolean;
+  @IsNumber()
+  p9: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p10: boolean;
+  @IsNumber()
+  p10: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p11: boolean;
+  @IsNumber()
+  p11: number;
 }
