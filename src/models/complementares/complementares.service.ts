@@ -12,7 +12,7 @@ export class ComplementaresService {
     private complementaresRepository: Repository<Complementar>,
   ) {}
   create(createComplementareDto: CreateComplementareDto) {
-    return this.complementaresRepository.create(createComplementareDto);
+    return this.complementaresRepository.save(createComplementareDto);
   }
 
   findAll() {
