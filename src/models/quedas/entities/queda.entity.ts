@@ -15,7 +15,7 @@ export class Queda {
   paciente_id: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  queda: boolean;
+  queda: number;
 
   @Column({ nullable: true })
   data_mes: number;
@@ -27,13 +27,13 @@ export class Queda {
   local_queda: string;
 
   @Column({ type: 'tinyint', nullable: true })
-  fratura: boolean;
+  fratura: number;
 
   @Column({ nullable: true })
   fratura_qual: string;
 
   @Column({ type: 'tinyint', nullable: true })
-  parou_atividade: boolean;
+  parou_atividade: number;
 
   @CreateDateColumn()
   created: Date;

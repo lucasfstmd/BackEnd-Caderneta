@@ -1,5 +1,5 @@
-import { ApiProperty, ApiTags } from '@nestjs/swagger';
-import { IsBoolean, IsNumber, IsString } from 'class-validator';
+import { ApiProperty } from '@nestjs/swagger';
+import { IsNumber, IsString } from 'class-validator';
 
 export class CreateQuedaDto {
   @ApiProperty()
@@ -7,8 +7,8 @@ export class CreateQuedaDto {
   paciente_id: number;
 
   @ApiProperty()
-  @IsBoolean()
-  queda: boolean;
+  @IsNumber()
+  queda: number;
 
   @ApiProperty()
   @IsNumber()
@@ -23,14 +23,14 @@ export class CreateQuedaDto {
   local_queda: string;
 
   @ApiProperty()
-  @IsBoolean()
-  fratura: boolean;
+  @IsNumber()
+  fratura: number;
 
   @ApiProperty()
   @IsString()
   fratura_qual: string;
 
   @ApiProperty()
-  @IsBoolean()
-  parou_atividade: boolean;
+  @IsNumber()
+  parou_atividade: number;
 }

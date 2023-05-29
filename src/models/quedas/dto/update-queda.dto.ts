@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateQuedaDto } from './create-queda.dto';
-import { IsBoolean, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class UpdateQuedaDto extends PartialType(CreateQuedaDto) {
   @ApiProperty()
@@ -8,8 +8,8 @@ export class UpdateQuedaDto extends PartialType(CreateQuedaDto) {
   paciente_id: number;
 
   @ApiProperty()
-  @IsBoolean()
-  queda: boolean;
+  @IsNumber()
+  queda: number;
 
   @ApiProperty()
   @IsNumber()
@@ -24,14 +24,14 @@ export class UpdateQuedaDto extends PartialType(CreateQuedaDto) {
   local_queda: string;
 
   @ApiProperty()
-  @IsBoolean()
-  fratura: boolean;
+  @IsNumber()
+  fratura: number;
 
   @ApiProperty()
   @IsString()
   fratura_qual: string;
 
   @ApiProperty()
-  @IsBoolean()
-  parou_atividade: boolean;
+  @IsNumber()
+  parou_atividade: number;
 }
