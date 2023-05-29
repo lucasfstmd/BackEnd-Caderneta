@@ -12,7 +12,7 @@ export class CronicasService {
     private cronicasRepository: Repository<Cronica>,
   ) {}
   create(createCronicaDto: CreateCronicaDto) {
-    return this.cronicasRepository.create(createCronicaDto);
+    return this.cronicasRepository.save(createCronicaDto);
   }
 
   findAll() {
