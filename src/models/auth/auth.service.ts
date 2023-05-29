@@ -2,10 +2,14 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UsuariosService } from '../usuarios/usuarios.service';
 import * as bcrypt from 'bcrypt';
 import { FindUsuarioDto } from '../usuarios/dto/find-usuario.dto';
+import { JwtService } from '@nestjs/jwt';
 
 @Injectable()
 export class AuthService {
-  constructor(private readonly usuariosService: UsuariosService) {}
+  constructor(
+    private readonly usuariosService: UsuariosService,
+    private jwtService: JwtService,
+  ) {}
 
   async login(nomeUsuario: string, senha: string) {
     const findUsuarioDto: FindUsuarioDto = {
@@ -17,10 +21,14 @@ export class AuthService {
       const senhaValida = await bcrypt.compare(senha, user.senha);
 
       if (senhaValida) {
-        return {
-          ...user,
-          senha: undefined,
+        const payload = {
+          sub: user.id,
+          usuario: user.usuario,
         };
+
+        return {
+          access_token: await this.jwtService.signAsync(payload),
+        }
       }
     }
 
