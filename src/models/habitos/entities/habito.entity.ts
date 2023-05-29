@@ -18,61 +18,61 @@ export class Habito {
   ano: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p1: boolean;
+  p1: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p2: boolean;
+  p2: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p3: boolean;
+  p3: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p4: boolean;
+  p4: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p5: boolean;
+  p5: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p6: boolean;
+  p6: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p7: boolean;
+  p7: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p8: boolean;
+  p8: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p9: boolean;
+  p9: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p10: boolean;
+  p10: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p11: boolean;
+  p11: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p12: boolean;
+  p12: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p13: boolean;
+  p13: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p14: boolean;
+  p14: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p15: boolean;
+  p15: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p16: boolean;
+  p16: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p17: boolean;
+  p17: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p18: boolean;
+  p18: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p19: boolean;
+  p19: number;
 
   @CreateDateColumn()
   created: Date;
