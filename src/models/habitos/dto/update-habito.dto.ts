@@ -12,6 +12,7 @@ export class UpdateHabitoDto extends PartialType(CreateHabitoDto) {
   ano: number;
 
   @ApiProperty()
+  @IsNumber()
   p1: number;
 
   @ApiProperty()

@@ -11,6 +11,7 @@ export class CreateHabitoDto {
   ano: number;
 
   @ApiProperty()
+  @IsNumber()
   p1: number;
 
   @ApiProperty()
