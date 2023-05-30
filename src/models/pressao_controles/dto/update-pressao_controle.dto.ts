@@ -11,7 +11,7 @@ export class UpdatePressaoControleDto extends PartialType(
 
   @ApiProperty()
   @IsString()
-  data: Date;
+  data: string;
 
   @ApiProperty()
   @IsString()

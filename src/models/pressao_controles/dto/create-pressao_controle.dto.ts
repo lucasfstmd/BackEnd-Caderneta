@@ -8,7 +8,7 @@ export class CreatePressaoControleDto {
 
   @ApiProperty()
   @IsString()
-  data: Date;
+  data: string;
 
   @ApiProperty()
   @IsString()
