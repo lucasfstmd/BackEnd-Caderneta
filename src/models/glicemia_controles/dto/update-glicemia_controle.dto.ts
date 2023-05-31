@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateGlicemiaControleDto } from './create-glicemia_controle.dto';
-import { IsDate, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class UpdateGlicemiaControleDto extends PartialType(
   CreateGlicemiaControleDto,
