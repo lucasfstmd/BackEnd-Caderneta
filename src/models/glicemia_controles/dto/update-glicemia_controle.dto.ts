@@ -10,8 +10,8 @@ export class UpdateGlicemiaControleDto extends PartialType(
   paciente_id: number;
 
   @ApiProperty()
-  @IsDate()
-  data: Date;
+  @IsString()
+  data: string;
 
   @ApiProperty()
   @IsString()

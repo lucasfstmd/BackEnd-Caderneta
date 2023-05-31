@@ -7,8 +7,8 @@ export class CreateGlicemiaControleDto {
   paciente_id: number;
 
   @ApiProperty()
-  @IsDate()
-  data: Date;
+  @IsString()
+  data: string;
 
   @ApiProperty()
   @IsString()
