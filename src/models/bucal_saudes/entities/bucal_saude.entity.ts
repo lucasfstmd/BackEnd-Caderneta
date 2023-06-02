@@ -18,97 +18,97 @@ export class BucalSaude {
   ano: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p1: boolean;
+  p1: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p2: boolean;
+  p2: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p3: boolean;
+  p3: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p4: boolean;
+  p4: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p5: boolean;
+  p5: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p6: boolean;
+  p6: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p7: boolean;
+  p7: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p8: boolean;
+  p8: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p9: boolean;
+  p9: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p10: boolean;
+  p10: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p11: boolean;
+  p11: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p12: boolean;
+  p12: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p13: boolean;
+  p13: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p14: boolean;
+  p14: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p15: boolean;
+  p15: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p16: boolean;
+  p16: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p17: boolean;
+  p17: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p18: boolean;
+  p18: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p19: boolean;
+  p19: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p20: boolean;
+  p20: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p21: boolean;
+  p21: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p22: boolean;
+  p22: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p23: boolean;
+  p23: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p24: boolean;
+  p24: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p25: boolean;
+  p25: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p26: boolean;
+  p26: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p27: boolean;
+  p27: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p28: boolean;
+  p28: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p29: boolean;
+  p29: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p30: boolean;
+  p30: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p31: boolean;
+  p31: number;
 
   @Column({ type: 'varchar', length: 500, nullable: true })
   p32: string;

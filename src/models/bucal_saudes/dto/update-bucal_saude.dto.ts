@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateBucalSaudeDto } from './create-bucal_saude.dto';
-import { IsBoolean, IsNumber } from 'class-validator';
+import { IsNumber, IsString} from 'class-validator';
 
 export class UpdateBucalSaudeDto extends PartialType(CreateBucalSaudeDto) {
   @ApiProperty()
@@ -12,130 +12,130 @@ export class UpdateBucalSaudeDto extends PartialType(CreateBucalSaudeDto) {
   ano: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p1: boolean;
+  @IsNumber()
+  p1: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p2: boolean;
+  @IsNumber()
+  p2: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p3: boolean;
+  @IsNumber()
+  p3: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p4: boolean;
+  @IsNumber()
+  p4: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p5: boolean;
+  @IsNumber()
+  p5: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p6: boolean;
+  @IsNumber()
+  p6: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p7: boolean;
+  @IsNumber()
+  p7: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p8: boolean;
+  @IsNumber()
+  p8: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p9: boolean;
+  @IsNumber()
+  p9: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p10: boolean;
+  @IsNumber()
+  p10: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p11: boolean;
+  @IsNumber()
+  p11: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p12: boolean;
+  @IsNumber()
+  p12: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p13: boolean;
+  @IsNumber()
+  p13: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p14: boolean;
+  @IsNumber()
+  p14: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p15: boolean;
+  @IsNumber()
+  p15: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p16: boolean;
+  @IsNumber()
+  p16: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p17: boolean;
+  @IsNumber()
+  p17: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p18: boolean;
+  @IsNumber()
+  p18: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p19: boolean;
+  @IsNumber()
+  p19: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p20: boolean;
+  @IsNumber()
+  p20: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p21: boolean;
+  @IsNumber()
+  p21: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p22: boolean;
+  @IsNumber()
+  p22: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p23: boolean;
+  @IsNumber()
+  p23: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p24: boolean;
+  @IsNumber()
+  p24: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p25: boolean;
+  @IsNumber()
+  p25: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p26: boolean;
+  @IsNumber()
+  p26: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p27: boolean;
+  @IsNumber()
+  p27: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p28: boolean;
+  @IsNumber()
+  p28: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p29: boolean;
+  @IsNumber()
+  p29: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p30: boolean;
+  @IsNumber()
+  p30: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p31: boolean;
+  @IsNumber()
+  p31: number;
 
   @ApiProperty()
-  @IsBoolean()
+  @IsString()
   p32: string;
 }

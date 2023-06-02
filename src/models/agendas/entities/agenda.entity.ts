@@ -5,7 +5,6 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { Paciente } from '../../pacientes/entities/paciente.entity';
 
 @Entity('agendas')
 export class Agenda {
@@ -15,8 +14,8 @@ export class Agenda {
   @Column()
   paciente_id: number;
 
-  @Column({ length: 50 })
-  data: string;
+  @Column({ type: 'date', nullable: true })
+  data: Date;
 
   @Column({ length: 500 })
   hora: string;
