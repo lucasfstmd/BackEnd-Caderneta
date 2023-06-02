@@ -8,7 +8,7 @@ export class CreateAtualizacoeDto {
 
   @ApiProperty()
   @IsString()
-  data: Date;
+  data: string;
 
   @ApiProperty()
   @IsString()

@@ -9,7 +9,7 @@ export class UpdateAtualizacoeDto extends PartialType(CreateAtualizacoeDto) {
 
   @ApiProperty()
   @IsString()
-  data: Date;
+  data: string;
 
   @ApiProperty()
   @IsString()
