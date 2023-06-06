@@ -57,16 +57,16 @@ export class Ivcf {
   p14: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p14_1: boolean;
+  p14_1: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p14_2: boolean;
+  p14_2: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p14_3: boolean;
+  p14_3: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p14_4: boolean;
+  p14_4: number;
 
   @Column({ nullable: true })
   p15: number;
@@ -87,13 +87,13 @@ export class Ivcf {
   p20: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p20_1: boolean;
+  p20_1: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p20_2: boolean;
+  p20_2: number;
 
   @Column({ type: 'tinyint', nullable: true })
-  p20_3: boolean;
+  p20_3: number;
 
   @Column({ nullable: true })
   p21: number;

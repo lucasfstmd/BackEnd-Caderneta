@@ -63,20 +63,20 @@ export class CreateIvcfDto {
   p14: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p14_1: boolean;
+  @IsNumber()
+  p14_1: number;
 
   @ApiProperty()
   @IsNumber()
-  p14_2: boolean;
+  p14_2: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p14_3: boolean;
+  @IsNumber()
+  p14_3: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p14_4: boolean;
+  @IsNumber()
+  p14_4: number;
 
   @ApiProperty()
   @IsNumber()
@@ -103,16 +103,16 @@ export class CreateIvcfDto {
   p20: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p20_1: boolean;
+  @IsNumber()
+  p20_1: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p20_2: boolean;
+  @IsNumber()
+  p20_2: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p20_3: boolean;
+  @IsNumber()
+  p20_3: number;
 
   @ApiProperty()
   @IsNumber()
