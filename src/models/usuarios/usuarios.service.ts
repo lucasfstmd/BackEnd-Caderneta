@@ -18,12 +18,7 @@ export class UsuariosService {
       senha: await bcrypt.hash(createUsuarioDto.senha, 10),
     };
 
-    await this.usuariosRepository.save(data);
-
-    return {
-      ...createUsuarioDto,
-      senha: undefined,
-    };
+    return this.usuariosRepository.save(data);
   }
 
   findAll() {
@@ -34,8 +29,13 @@ export class UsuariosService {
     return this.usuariosRepository.findOne({ where: { id } });
   }
 
-  update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-    return this.usuariosRepository.update(id, updateUsuarioDto);
+  async update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
+    const data: UpdateUsuarioDto = {
+      ...updateUsuarioDto,
+      senha: await bcrypt.hash(updateUsuarioDto.senha, 10),
+    };
+    
+    return this.usuariosRepository.update(id, data);
   }
 
   remove(id: number) {
