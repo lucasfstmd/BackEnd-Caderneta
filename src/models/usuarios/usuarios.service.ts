@@ -5,6 +5,7 @@ import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { Usuario } from './entities/usuario.entity';
 import { Repository } from 'typeorm';
 import { FindUsuarioDto } from './dto/find-usuario.dto';
+import { UpdateUsuarioNotPasswordDto } from './dto/update-usuario-not-password.dto';
 
 @Injectable()
 export class UsuariosService {
@@ -29,12 +30,18 @@ export class UsuariosService {
     return this.usuariosRepository.findOne({ where: { id } });
   }
 
-  async update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
+  async update(
+    id: number,
+    updateUsuarioNotPasswordDto: UpdateUsuarioNotPasswordDto,
+  ) {
+    return this.usuariosRepository.update(id, updateUsuarioNotPasswordDto);
+  }
+
+  async updatePassword(id: number, updatePasswordUsuario: UpdateUsuarioDto) {
     const data: UpdateUsuarioDto = {
-      ...updateUsuarioDto,
-      senha: await bcrypt.hash(updateUsuarioDto.senha, 10),
+      ...updatePasswordUsuario,
+      senha: await bcrypt.hash(updatePasswordUsuario.senha, 10),
     };
-    
     return this.usuariosRepository.update(id, data);
   }
 

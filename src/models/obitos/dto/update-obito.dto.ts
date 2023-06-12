@@ -9,13 +9,13 @@ export class UpdateObitoDto extends PartialType(CreateObitoDto) {
 
   @ApiProperty()
   @IsNumber()
-  obito: number;
+  obito?: number;
 
   @ApiProperty()
   @IsString()
-  quando: string;
+  quando?: string;
 
   @ApiProperty()
   @IsString()
-  motivo: string;
+  motivo?: string;
 }

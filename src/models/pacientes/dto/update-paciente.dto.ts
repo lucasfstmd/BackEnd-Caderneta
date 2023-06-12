@@ -1,169 +1,169 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreatePacienteDto } from './create-paciente.dto';
-import { IsBoolean, IsDate, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {
   @ApiProperty()
   @IsString()
-  ubs: string;
+  ubs?: string;
 
   @ApiProperty()
   @IsString()
-  nome: string;
+  nome?: string;
 
   @ApiProperty()
   @IsString()
-  nome_social: string;
+  nome_social?: string;
 
   @ApiProperty()
   @IsString()
-  n_cartao_sus: string;
+  n_cartao_sus?: string;
 
   @ApiProperty()
   @IsString()
-  identidade: string;
+  identidade?: string;
 
   @ApiProperty()
   @IsString()
-  cpf: string;
+  cpf?: string;
 
   @ApiProperty()
   @IsString()
-  nome_mae: string;
+  nome_mae?: string;
 
   @ApiProperty()
   @IsString()
-  sexo: string;
+  sexo?: string;
 
   @ApiProperty()
   @IsString()
-  nascimento_municipio: string;
+  nascimento_municipio?: string;
 
   @ApiProperty()
   @IsString()
-  nascimento_uf: string;
+  nascimento_uf?: string;
 
   @ApiProperty()
   @IsString()
-  nacionalidade: string;
+  nacionalidade?: string;
 
   @ApiProperty()
   @IsString()
-  nascimento: string;
+  nascimento?: string;
 
   @ApiProperty()
   @IsNumber()
-  sabe_ler_escrever: number;
+  sabe_ler_escrever?: number;
 
   @ApiProperty()
   @IsString()
-  escolaridade: string;
+  escolaridade?: string;
 
   @ApiProperty()
   @IsString()
-  raca_cor: string;
+  raca_cor?: string;
 
   @ApiProperty()
   @IsString()
-  religiao: string;
+  religiao?: string;
 
   @ApiProperty()
   @IsString()
-  religiao_qual: string;
+  religiao_qual?: string;
 
   @ApiProperty()
   @IsString()
-  ocupacao: string;
+  ocupacao?: string;
 
   @ApiProperty()
   @IsString()
-  situacao_conjugal: string;
+  situacao_conjugal?: string;
 
   @ApiProperty()
   @IsString()
-  viuvo_desde: string;
+  viuvo_desde?: string;
 
   @ApiProperty()
   @IsString()
-  unidade_basica: string;
+  unidade_basica?: string;
 
   @ApiProperty()
   @IsString()
-  alergia_maior_gravidade: string;
+  alergia_maior_gravidade?: string;
 
   @ApiProperty()
   @IsNumber()
-  deficiencia: number;
+  deficiencia?: number;
 
   @ApiProperty()
   @IsString()
-  deficiencia_qual: string;
+  deficiencia_qual?: string;
 
   @ApiProperty()
   @IsString()
-  deficiencia_especificar: string;
+  deficiencia_especificar?: string;
 
   @ApiProperty()
   @IsString()
-  grupo_sanguineo: string;
+  grupo_sanguineo?: string;
 
   @ApiProperty()
   @IsString()
-  rua: string;
+  rua?: string;
 
   @ApiProperty()
   @IsString()
-  numero: string;
+  numero?: string;
 
   @ApiProperty()
   @IsString()
-  complemento: string;
+  complemento?: string;
 
   @ApiProperty()
   @IsString()
-  bairro: string;
+  bairro?: string;
 
   @ApiProperty()
   @IsString()
-  ponto_referencia: string;
+  ponto_referencia?: string;
 
   @ApiProperty()
   @IsString()
-  cep: string;
+  cep?: string;
 
   @ApiProperty()
   @IsString()
-  municipio: string;
+  municipio?: string;
 
   @ApiProperty()
   @IsString()
-  uf: string;
+  uf?: string;
 
   @ApiProperty()
   @IsString()
-  telefone: string;
+  telefone?: string;
 
   @ApiProperty()
   @IsString()
-  celular: string;
+  celular?: string;
 
   @ApiProperty()
   @IsString()
-  email: string;
+  email?: string;
 
   @ApiProperty()
   @IsString()
-  qual_etnia: string;
+  qual_etnia?: string;
 
   @ApiProperty()
   @IsString()
-  data_nascimento: string;
+  data_nascimento?: string;
 
   @ApiProperty()
   @IsNumber()
-  possui_internet: number;
+  possui_internet?: number;
 
   @ApiProperty()
   @IsString()
-  numero_identificacao: string;
+  numero_identificacao?: string;
 }

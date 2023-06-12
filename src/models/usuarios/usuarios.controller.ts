@@ -12,6 +12,7 @@ import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { FindUsuarioDto } from './dto/find-usuario.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { UpdateUsuarioNotPasswordDto } from './dto/update-usuario-not-password.dto';
 
 @ApiTags('Usuarios')
 @Controller('api/v1/usuarios')
@@ -42,8 +43,19 @@ export class UsuariosController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUsuarioDto) {
-    return this.usuariosService.update(+id, updateUsuarioDto);
+  update(
+    @Param('id') id: string,
+    @Body() updateUsuarioNotPasswordDto: UpdateUsuarioNotPasswordDto,
+  ) {
+    return this.usuariosService.update(+id, updateUsuarioNotPasswordDto);
+  }
+
+  @Patch('/password/:id')
+  updatePassword(
+    @Param('id') id: string,
+    @Body() updateUsuarioDto: UpdateUsuarioDto,
+  ) {
+    return this.usuariosService.updatePassword(+id, updateUsuarioDto);
   }
 
   @Delete(':id')
@@ -51,10 +63,3 @@ export class UsuariosController {
     return this.usuariosService.remove(+id);
   }
 }
-/*
-{
-  "usuario": "lucas",
-  "email": "lucas@email.com",
-  "senha": "lucas123"
-}
- */
