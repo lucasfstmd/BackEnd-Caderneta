@@ -14,7 +14,7 @@ export class CreateUsuarioDto {
   @MaxLength(20)
   @Matches(/^[a-zA-Z0-9]+$/, {
     message:
-      'Username must only contain uppercase letters, lowercase letters, and numbers.',
+      'O nome de usuário deve conter apenas letras maiúsculas, letras minúsculas e números.',
   })
   usuario: string;
 
