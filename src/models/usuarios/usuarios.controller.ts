@@ -9,10 +9,10 @@ import {
 } from '@nestjs/common';
 import { UsuariosService } from './usuarios.service';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
-import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { FindUsuarioDto } from './dto/find-usuario.dto';
 import { ApiTags } from '@nestjs/swagger';
 import { UpdateUsuarioNotPasswordDto } from './dto/update-usuario-not-password.dto';
+import { UpdateUsuarioPasswordDto } from './dto/update-usuario-password.dto';
 
 @ApiTags('Usuarios')
 @Controller('api/v1/usuarios')
@@ -53,9 +53,9 @@ export class UsuariosController {
   @Patch('/password/:id')
   updatePassword(
     @Param('id') id: string,
-    @Body() updateUsuarioDto: UpdateUsuarioDto,
+    @Body() updateUsuarioPasswordDto: UpdateUsuarioPasswordDto,
   ) {
-    return this.usuariosService.updatePassword(+id, updateUsuarioDto);
+    return this.usuariosService.updatePassword(+id, updateUsuarioPasswordDto);
   }
 
   @Delete(':id')

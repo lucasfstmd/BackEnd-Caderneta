@@ -11,9 +11,3 @@ import { DataBaseModule } from '../../database/dataBaseModule';
   exports: [UsuariosService],
 })
 export class UsuariosModule {}
-/*
-{
-  "usuario": "lucas",
-  "senha": "lucas123"
-}
-*/
