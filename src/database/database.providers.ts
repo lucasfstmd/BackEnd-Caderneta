@@ -6,7 +6,8 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'mysql',
-        host: 'mysql://bda77cfb67a2d9:60cd6af0@us-cdbr-east-06.cleardb.net/heroku_cdcda3cf3bf842e?reconnect=true',
+        host: 'us-cdbr-east-06.cleardb.net',
+        port: 3306,
         username: 'bda77cfb67a2d9',
         password: '60cd6af0',
         database: 'heroku_cdcda3cf3bf842e',
@@ -14,7 +15,7 @@ export const databaseProviders = [
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       });
 
-      return dataSource.initialize();
+      return await dataSource.connect();
     },
   },
 ];
