@@ -48,10 +48,8 @@ export class PacientesService {
       where: { ubs },
     });
 
-    const pacientesComb = pacientesPorNome.filter((paciente) =>
+    return pacientesPorNome.filter((paciente) =>
       pacientesPorUbs.some((p) => p.id === paciente.id),
     );
-
-    return pacientesComb;
   }
 }

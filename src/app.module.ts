@@ -39,6 +39,7 @@ import { SppbsModule } from './models/sppbs/sppbs.module';
 import { VacinasModule } from './models/vacinas/vacinas.module';
 import { VulnerabilidadesModule } from './models/vulnerabilidades/vulnerabilidades.module';
 import { UbsModule } from './models/ubs/ubs.module';
+import { DatabaseModule } from './models/database/database.module';
 
 @Module({
   controllers: [AppController],
@@ -81,6 +82,7 @@ import { UbsModule } from './models/ubs/ubs.module';
     VacinasModule,
     VulnerabilidadesModule,
     UbsModule,
+    DatabaseModule,
   ],
   providers: [AppService],
 })

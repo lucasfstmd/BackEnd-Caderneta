@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm';
+import { DataBaseView } from '../models/database/entities/database.entity';
 
 export const databaseProviders = [
   {
@@ -12,7 +13,7 @@ export const databaseProviders = [
         password: 'root',
         database: 'caderneta',
         synchronize: true,
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        entities: [__dirname + '/../**/*.entity{.ts,.js}', DataBaseView],
       });
 
       return dataSource.initialize();
