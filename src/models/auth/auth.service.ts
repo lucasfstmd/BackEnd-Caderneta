@@ -3,6 +3,7 @@ import { UsuariosService } from '../usuarios/usuarios.service';
 import * as bcrypt from 'bcrypt';
 import { FindUsuarioDto } from '../usuarios/dto/find-usuario.dto';
 import { JwtService } from '@nestjs/jwt';
+import { LoginPayload } from './dto/login.payload';
 
 @Injectable()
 export class AuthService {
@@ -21,14 +22,14 @@ export class AuthService {
       const senhaValida = await bcrypt.compare(senha, user.senha);
 
       if (senhaValida) {
-        const payload = {
-          sub: user.id,
-          usuario: user.usuario,
+        const loginPayload: LoginPayload = {
+          id: user.id,
+          typeUser: user.tipo,
         };
 
         return {
-          access_token: await this.jwtService.signAsync(payload),
-        }
+          access_token: await this.jwtService.signAsync(loginPayload),
+        };
       }
     }
 

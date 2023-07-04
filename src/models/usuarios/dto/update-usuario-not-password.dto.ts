@@ -1,11 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsEmail,
+  IsEnum,
   IsString,
   Matches,
   MaxLength,
   MinLength,
 } from 'class-validator';
+import { UserTypes } from '../enum/user-types.enum';
 
 export class UpdateUsuarioNotPasswordDto {
   @ApiProperty()
@@ -21,4 +23,8 @@ export class UpdateUsuarioNotPasswordDto {
   @ApiProperty()
   @IsEmail()
   email: string;
+
+  @ApiProperty()
+  @IsEnum(UserTypes)
+  tipo: UserTypes;
 }

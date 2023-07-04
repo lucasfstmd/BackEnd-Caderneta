@@ -2,11 +2,13 @@ import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateUsuarioDto } from './create-usuario.dto';
 import {
   IsEmail,
+  IsEnum,
   IsString,
   Matches,
   MaxLength,
   MinLength,
 } from 'class-validator';
+import { UserTypes } from '../enum/user-types.enum';
 
 export class UpdateUsuarioDto extends PartialType(CreateUsuarioDto) {
   @ApiProperty()
@@ -26,4 +28,8 @@ export class UpdateUsuarioDto extends PartialType(CreateUsuarioDto) {
   @ApiProperty()
   @IsString()
   senha: string;
+
+  @ApiProperty()
+  @IsEnum(UserTypes)
+  tipo: UserTypes;
 }

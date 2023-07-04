@@ -57,6 +57,7 @@ export class UsuariosService {
           usuario: findUserById.usuario,
           email: findUserById.email,
           senha: await bcrypt.hash(updatePasswordUsuario.newPassword, 10),
+          tipo: findUserById.tipo,
         };
 
         return this.usuariosRepository.update(id, data);

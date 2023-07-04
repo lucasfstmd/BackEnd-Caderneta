@@ -1,11 +1,13 @@
 import {
   IsEmail,
+  IsEnum,
   IsString,
   Matches,
   MaxLength,
   MinLength,
 } from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { UserTypes } from '../enum/user-types.enum';
 
 export class CreateUsuarioDto {
   @ApiProperty()
@@ -25,4 +27,8 @@ export class CreateUsuarioDto {
   @ApiProperty()
   @IsString()
   senha: string;
+
+  @ApiProperty()
+  @IsEnum(UserTypes)
+  tipo: UserTypes;
 }

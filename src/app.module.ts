@@ -40,6 +40,9 @@ import { VacinasModule } from './models/vacinas/vacinas.module';
 import { VulnerabilidadesModule } from './models/vulnerabilidades/vulnerabilidades.module';
 import { UbsModule } from './models/ubs/ubs.module';
 import { DatabaseModule } from './models/database/database.module';
+import { APP_GUARD } from '@nestjs/core';
+import { RolesGuard } from './guards/roles.guard';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   controllers: [AppController],
@@ -83,7 +86,14 @@ import { DatabaseModule } from './models/database/database.module';
     VulnerabilidadesModule,
     UbsModule,
     DatabaseModule,
+    JwtModule,
   ],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: RolesGuard,
+    },
+  ],
 })
 export class AppModule {}
