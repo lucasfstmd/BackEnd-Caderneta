@@ -24,6 +24,7 @@ export class AuthService {
       if (senhaValida) {
         const loginPayload: LoginPayload = {
           id: user.id,
+          name: user.usuario,
           typeUser: user.tipo,
         };
 

@@ -27,7 +27,6 @@ export class UsuariosController {
     return this.usuariosService.create(createUsuarioDto);
   }
 
-  @Roles(UserTypes.User, UserTypes.Admin)
   @Get()
   findAll() {
     return this.usuariosService.findAll();
