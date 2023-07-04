@@ -15,6 +15,11 @@ export class Usuario {
   @Column({ length: 100 })
   senha: string;
 
-  @Column({ nullable: false })
+  @Column({
+    nullable: false,
+    type: 'enum',
+    enum: UserTypes,
+    default: UserTypes.User,
+  })
   tipo: UserTypes;
 }
