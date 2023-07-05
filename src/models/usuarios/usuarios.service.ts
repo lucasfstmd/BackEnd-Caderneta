@@ -30,7 +30,12 @@ export class UsuariosService {
   }
 
   async update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
-    return this.usuariosRepository.update(id, updateUsuarioDto);
+    const data: UpdateUsuarioDto = {
+      ...updateUsuarioDto,
+      senha: await bcrypt.hash(updateUsuarioDto.senha, 10),
+    };
+
+    return this.usuariosRepository.update(id, data);
   }
 
   remove(id: number) {
