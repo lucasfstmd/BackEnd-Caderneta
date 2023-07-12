@@ -7,11 +7,11 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'mysql',
-        host: 'us-cdbr-east-06.cleardb.net',
+        host: 'localhost',
         port: 3306,
-        username: 'bda77cfb67a2d9',
-        password: '60cd6af0',
-        database: 'heroku_cdcda3cf3bf842e',
+        username: 'root',
+        password: 'root',
+        database: 'caderneta',
         synchronize: true,
         entities: [__dirname + '/../**/*.entity{.ts,.js}', DataBaseView],
       });
