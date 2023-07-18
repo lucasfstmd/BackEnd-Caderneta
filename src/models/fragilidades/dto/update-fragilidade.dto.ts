@@ -1,6 +1,6 @@
 import { ApiProperty, PartialType } from '@nestjs/swagger';
 import { CreateFragilidadeDto } from './create-fragilidade.dto';
-import { IsBoolean, IsNumber, IsString } from 'class-validator';
+import { IsNumber, IsString } from 'class-validator';
 
 export class UpdateFragilidadeDto extends PartialType(CreateFragilidadeDto) {
   @ApiProperty()
@@ -8,16 +8,16 @@ export class UpdateFragilidadeDto extends PartialType(CreateFragilidadeDto) {
   paciente_id: number;
 
   @ApiProperty()
-  @IsBoolean()
-  p1: boolean;
+  @IsNumber()
+  p1: number;
 
   @ApiProperty()
   @IsString()
   p2_1: string;
 
   @ApiProperty()
-  @IsBoolean()
-  p2_2: boolean;
+  @IsNumber()
+  p2_2: number;
 
   @ApiProperty()
   @IsString()
@@ -28,24 +28,24 @@ export class UpdateFragilidadeDto extends PartialType(CreateFragilidadeDto) {
   p3_2: string;
 
   @ApiProperty()
-  @IsBoolean()
-  p3_3: boolean;
+  @IsNumber()
+  p3_3: number;
 
   @ApiProperty()
   @IsString()
   p4_1: string;
 
   @ApiProperty()
-  @IsBoolean()
-  p4_2: boolean;
+  @IsNumber()
+  p4_2: number;
 
   @ApiProperty()
   @IsString()
   p5_1a_1: string;
 
   @ApiProperty()
-  @IsBoolean()
-  p5_1a_2: boolean;
+  @IsNumber()
+  p5_1a_2: number;
 
   @ApiProperty()
   @IsString()
@@ -60,8 +60,8 @@ export class UpdateFragilidadeDto extends PartialType(CreateFragilidadeDto) {
   p5_2a_1: string;
 
   @ApiProperty()
-  @IsBoolean()
-  p5_2a_2: boolean;
+  @IsNumber()
+  p5_2a_2: number;
 
   @ApiProperty()
   @IsString()
@@ -76,8 +76,8 @@ export class UpdateFragilidadeDto extends PartialType(CreateFragilidadeDto) {
   p5_3a_1: string;
 
   @ApiProperty()
-  @IsBoolean()
-  p5_3a_2: boolean;
+  @IsNumber()
+  p5_3a_2: number;
 
   @ApiProperty()
   @IsString()
@@ -108,8 +108,8 @@ export class UpdateFragilidadeDto extends PartialType(CreateFragilidadeDto) {
   ipaq: string;
 
   @ApiProperty()
-  @IsBoolean()
-  baixo_nivel_atividade_fisica: boolean;
+  @IsNumber()
+  baixo_nivel_atividade_fisica: number;
 
   @ApiProperty()
   @IsString()
