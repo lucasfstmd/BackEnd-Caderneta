@@ -39,7 +39,6 @@ import { SppbsModule } from './models/sppbs/sppbs.module';
 import { VacinasModule } from './models/vacinas/vacinas.module';
 import { VulnerabilidadesModule } from './models/vulnerabilidades/vulnerabilidades.module';
 import { UbsModule } from './models/ubs/ubs.module';
-import { DatabaseModule } from './models/database/database.module';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './guards/roles.guard';
 import { JwtModule } from '@nestjs/jwt';
@@ -85,7 +84,6 @@ import { JwtModule } from '@nestjs/jwt';
     VacinasModule,
     VulnerabilidadesModule,
     UbsModule,
-    DatabaseModule,
     JwtModule,
   ],
   providers: [
