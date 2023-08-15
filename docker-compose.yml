@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+      context: .
+      # Only will build development stage from our dockerfile
+      target: development
+    container_name: backend-caderneta
+    # Run a command against the development stage of the image
+    ports:
+      - 8080:8080
+    restart: always
+    volumes:
+      - ./.certs/:/app/.certs:ro
+    command: >
+      sleep infinity
