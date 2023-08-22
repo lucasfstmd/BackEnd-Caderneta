@@ -20,7 +20,7 @@ export class Fragilidade {
   @Column({ nullable: true, length: 100, type: 'varchar' })
   p2_1: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'tinyint', nullable: true })
   p2_2: number;
 
   @Column({ nullable: true, length: 100, type: 'varchar' })

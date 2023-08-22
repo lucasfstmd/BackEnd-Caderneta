@@ -164,7 +164,7 @@ export class LaboratorialExames {
   @Column({ length: 100, nullable: true })
   leucograma_neutrofilos_em_bastao: string;
 
-  @Column({ length: 255, nullable: true })
+  @Column({ length: 100, nullable: true })
   leucograma_neutrofilos_segmentados: string;
 
   @Column({ length: 100, nullable: true })

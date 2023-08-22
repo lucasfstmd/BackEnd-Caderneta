@@ -23,13 +23,13 @@ export class Queda {
   @Column({ nullable: true })
   data_ano: number;
 
-  @Column({ nullable: true })
+  @Column({ length: 250, nullable: true })
   local_queda: string;
 
   @Column({ type: 'tinyint', nullable: true })
   fratura: number;
 
-  @Column({ nullable: true })
+  @Column({ length: 250, nullable: true })
   fratura_qual: string;
 
   @Column({ type: 'tinyint', nullable: true })

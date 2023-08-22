@@ -10,7 +10,7 @@ export const databaseProviders = [
         port: 3306,
         username: 'root',
         password: 'caderneta-DB@ccs2023',
-        database: 'caderneta-db',
+        database: 'caderneta',
         synchronize: true,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       });
