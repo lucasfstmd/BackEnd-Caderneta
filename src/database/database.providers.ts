@@ -1,4 +1,5 @@
 import { DataSource } from 'typeorm';
+import * as process from 'process'
 
 export const databaseProviders = [
   {
@@ -6,11 +7,11 @@ export const databaseProviders = [
     useFactory: async () => {
       const dataSource = new DataSource({
         type: 'mysql',
-        host: '10.3.225.101',
-        port: 3306,
-        username: 'root',
-        password: 'caderneta-DB@ccs2023',
-        database: 'caderneta',
+        host: process.env.DATABASE_HOST,
+        port: parseInt(process.env.DATABASE_PORT),
+        username: process.env.DATABASE_USER,
+        password: process.env.DATABASE_PASSWORD,
+        database: process.env.DATABASE_DEFAULT_SCHEMA,
         synchronize: true,
         entities: [__dirname + '/../**/*.entity{.ts,.js}'],
       });

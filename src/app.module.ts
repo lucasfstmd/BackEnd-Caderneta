@@ -42,10 +42,15 @@ import { UbsModule } from './models/ubs/ubs.module';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './guards/roles.guard';
 import { JwtModule } from '@nestjs/jwt';
+import { ConfigModule } from '@nestjs/config'
 
 @Module({
   controllers: [AppController],
   imports: [
+    ConfigModule.forRoot({
+      envFilePath: '.env',
+      isGlobal: true
+    }),
     UsuariosModule,
     AuthModule,
     PacientesModule,

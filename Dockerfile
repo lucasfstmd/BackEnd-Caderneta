@@ -1,11 +1,15 @@
-FROM node:latest
+FROM node:20-alpine
 
-WORKDIR /usr/src/api
 
-COPY . .
+# Create web-app directory
+RUN mkdir -p /usr/src/backend-cadernteta
+WORKDIR /usr/src/backend-cadernteta
 
-RUN npm install --quiet --no-optional --no-found --loglevel=error
+COPY . /usr/src/backend-cadernteta
 
-RUN npm run build
+RUN npm install
+EXPOSE 8080
 
-CMD ["node", "run", "start:prod"]
+ENTRYPOINT npm run build \
+&& export NODE_OPTIONS="--max-old-space-size=2560" \
+&& npm run start:prod

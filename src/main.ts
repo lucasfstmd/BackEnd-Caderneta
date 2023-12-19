@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ValidationPipe } from '@nestjs/common';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
 import * as fs from 'fs'
 
 const httpsOptions = {
@@ -10,7 +10,13 @@ const httpsOptions = {
 };
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { httpsOptions, cors: true });
+  let app: INestApplication
+
+  if (process.env.NODE_ENV === "deploy") {
+    app = await NestFactory.create(AppModule, { httpsOptions, cors: true });
+  } else {
+    app = await NestFactory.create(AppModule, {cors: true});
+  }
 
   const config = new DocumentBuilder()
     .setTitle('API BackEnd Caderneta')
@@ -30,7 +36,10 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
     }),
   );
+  const port = (process.env.PORT || 3333);
 
-  await app.listen(process.env.port || 8080);
+  await app.listen(port);
+  console.log(`\nApplication on ${port}`);
+
 }
 bootstrap();
