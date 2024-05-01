@@ -42,14 +42,15 @@ import { UbsModule } from './models/ubs/ubs.module';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from './guards/roles.guard';
 import { JwtModule } from '@nestjs/jwt';
-import { ConfigModule } from '@nestjs/config'
+import { ConfigModule } from '@nestjs/config';
+import { DatabaseModule } from './models/database/database.module';
 
 @Module({
   controllers: [AppController],
   imports: [
     ConfigModule.forRoot({
       envFilePath: '.env',
-      isGlobal: true
+      isGlobal: true,
     }),
     UsuariosModule,
     AuthModule,
@@ -90,6 +91,7 @@ import { ConfigModule } from '@nestjs/config'
     VulnerabilidadesModule,
     UbsModule,
     JwtModule,
+    DatabaseModule,
   ],
   providers: [
     AppService,

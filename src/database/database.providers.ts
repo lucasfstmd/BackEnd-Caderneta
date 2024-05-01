@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import * as process from 'process'
+import * as process from 'process';
 
 export const databaseProviders = [
   {
