@@ -16,6 +16,19 @@ import { QuedasService } from '../quedas/quedas.service';
 import { CronicasService } from '../cronicas/cronicas.service';
 import { IntensidadesService } from '../intensidades/intensidades.service';
 import { HabitosService } from '../habitos/habitos.service';
+import { PressaoControlesService } from '../pressao_controles/pressao_controles.service';
+import { GlicemiaControlesService } from '../glicemia_controles/glicemia_controles.service';
+import { BucalSaudesService } from '../bucal_saudes/bucal_saudes.service';
+import { PclsService } from '../pcls/pcls.service';
+import { PreensaoForcasService } from '../preensao_forcas/preensao_forcas.service';
+import { SppbsService } from '../sppbs/sppbs.service';
+import { IvcfsService } from '../ivcfs/ivcfs.service';
+import { BioimpedanciasService } from '../bioimpedancias/bioimpedancias.service';
+import { LaboratorialExamesService } from '../laboratorial_exames/laboratorial_exames.service';
+import { FragilidadesService } from '../fragilidades/fragilidades.service';
+import { FrrisquesService } from '../frrisques/frrisques.service';
+import { InfanciasService } from '../infancias/infancias.service';
+import { SarcfsService } from '../sarcfs/sarcfs.service';
 
 @Controller('api/v1/database')
 export class DatabaseController {
@@ -37,6 +50,19 @@ export class DatabaseController {
     private readonly cronicaService: CronicasService,
     private readonly iService: IntensidadesService,
     private readonly hService: HabitosService,
+    private readonly pcService: PressaoControlesService,
+    private readonly gcService: GlicemiaControlesService,
+    private readonly bsService: BucalSaudesService,
+    private readonly pclsService: PclsService,
+    private readonly pfService: PreensaoForcasService,
+    private readonly sbbpService: SppbsService,
+    private readonly ivcfService: IvcfsService,
+    private readonly bioService: BioimpedanciasService,
+    private readonly leService: LaboratorialExamesService,
+    private readonly frService: FragilidadesService,
+    private readonly frrService: FrrisquesService,
+    private readonly infService: InfanciasService,
+    private readonly sarcfService: SarcfsService,
   ) {}
 
   @Get()
@@ -58,6 +84,19 @@ export class DatabaseController {
     const cronica = await this.cronicaService.findAll();
     const i = await this.iService.findAll();
     const h = await this.hService.findAll();
+    const pc = await this.pcService.findAll();
+    const gc = await this.gcService.findAll();
+    const bs = await this.bsService.findAll();
+    const pcls = await this.pclsService.findAll();
+    const pf = await this.pfService.findAll();
+    const sbbps = await this.sbbpService.findAll();
+    const ivcfs = await this.ivcfService.findAll();
+    const bio = await this.bioService.findAll();
+    const le = await this.leService.findAll();
+    const fr = await this.frService.findAll();
+    const frr = await this.frrService.findAll();
+    const inf = await this.infService.findAll();
+    const sarcfs = await this.sarcfService.findAll();
 
     const build = (array, field, patient_id) => {
       return array
@@ -81,7 +120,7 @@ export class DatabaseController {
         }, {});
     };
 
-    const result = pt.map((patient) => {
+    return pt.map((patient) => {
       const familiar = build(f, 'familiar', patient.id);
       const obito = build(o, 'exame', patient.id);
       const medicamento = build(ava, 'medicamentos', patient.id);
@@ -98,6 +137,19 @@ export class DatabaseController {
       const cronicas = build(cronica, 'cronicas', patient.id);
       const intensidade = build(i, 'intensidades', patient.id);
       const habito = build(h, 'habitos', patient.id);
+      const controlesPressao = build(pc, 'controlePressao', patient.id);
+      const glicemias = build(gc, 'glicemia', patient.id);
+      const saudeBuca = build(bs, 'saudeBucal', patient.id);
+      const pcl = build(pcls, 'pcls', patient.id);
+      const forcasPreensao = build(pf, 'forcaPreensao', patient.id);
+      const sppb = build(sbbps, 'sppbs', patient.id);
+      const ivcf = build(ivcfs, 'ivcfs', patient.id);
+      const bioimpedancia = build(bio, 'bioimpedancias', patient.id);
+      const exameLabo = build(le, 'exames-laboratoriais', patient.id);
+      const fragilidade = build(fr, 'fragilidades', patient.id);
+      const frrisque = build(frr, 'frrisques', patient.id);
+      const infancia = build(inf, 'infancia', patient.id);
+      const sarcf = build(sarcfs, 'sarcfs', patient.id);
 
       return {
         ...patient,
@@ -117,9 +169,20 @@ export class DatabaseController {
         ...cronicas,
         ...intensidade,
         ...habito,
+        ...controlesPressao,
+        ...glicemias,
+        ...saudeBuca,
+        ...pcl,
+        ...forcasPreensao,
+        ...sppb,
+        ...ivcf,
+        ...bioimpedancia,
+        ...exameLabo,
+        ...fragilidade,
+        ...frrisque,
+        ...infancia,
+        ...sarcf,
       };
     });
-
-    return result;
   }
 }
