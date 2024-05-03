@@ -2,7 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
-import * as fs from 'fs';
+const cors = require('cors')
 
 /*const httpsOptions = {
   key: fs.readFileSync('.certs/privkey.pem'),
@@ -39,6 +39,7 @@ async function bootstrap() {
     }),
   );
   const port = process.env.PORT || 3333;
+  app.use(cors())
 
   await app.listen(port);
   console.log(`\nApplication on ${port}`);
