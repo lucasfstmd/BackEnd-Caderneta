@@ -10,9 +10,12 @@ const cors = require('cors')
 };*/
 
 async function bootstrap() {
-  const app: INestApplication = await NestFactory.create(AppModule, {
-    cors: true,
-  });
+  const app: INestApplication = await NestFactory.create(AppModule);
+
+  app.use(cors({
+    origin: 'http://localhost:3000',
+    methods: ['POST', 'GET', 'DELETE', 'PATCH'],
+  }));
 
   /*  if (process.env.NODE_ENV === "deploy") {
     app = await NestFactory.create(AppModule, { httpsOptions, cors: true });
@@ -39,7 +42,7 @@ async function bootstrap() {
     }),
   );
   const port = process.env.PORT || 3333;
-  app.use(cors())
+
 
   await app.listen(port);
   console.log(`\nApplication on ${port}`);

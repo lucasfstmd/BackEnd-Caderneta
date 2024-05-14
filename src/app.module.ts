@@ -44,6 +44,14 @@ import { RolesGuard } from './guards/roles.guard';
 import { JwtModule } from '@nestjs/jwt';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './models/database/database.module';
+import { UsabilidadeModule } from './models/usabilidade/usabilidade.module';
+import { PsqiModule } from './models/psqi/psqi.module';
+import { AnsiedadeModule } from './models/ansiedade/ansiedade.module';
+import { AutorrelatoModule } from './models/autorrelato/autorrelato.module';
+import { EscalaEstresseModule } from './models/escala-estresse/escala-estresse.module';
+import { EscalaDepressaoModule } from './models/escala-depressao/escala-depressao.module';
+import { EseModule } from './models/ese/ese.module';
+import { IpaqModule } from './models/ipaq/ipaq.module';
 
 @Module({
   controllers: [AppController],
@@ -92,6 +100,14 @@ import { DatabaseModule } from './models/database/database.module';
     UbsModule,
     JwtModule,
     DatabaseModule,
+    UsabilidadeModule,
+    PsqiModule,
+    IpaqModule,
+    EseModule,
+    EscalaDepressaoModule,
+    EscalaEstresseModule,
+    AutorrelatoModule,
+    AnsiedadeModule,
   ],
   providers: [
     AppService,
