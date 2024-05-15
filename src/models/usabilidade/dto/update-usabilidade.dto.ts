@@ -12,8 +12,8 @@ export class UpdateUsabilidadeDto extends PartialType(CreateUsabilidadeDto) {
     p1: number;
 
     @ApiProperty()
-    @IsNumber()
-    p1_0: number;
+    @IsString()
+    p1_0: string;
 
     @ApiProperty()
     @IsNumber()
@@ -40,8 +40,8 @@ export class UpdateUsabilidadeDto extends PartialType(CreateUsabilidadeDto) {
     p1_2: number;
 
     @ApiProperty()
-    @IsNumber()
-    p1_3: number;
+    @IsString()
+    p1_3: string;
 
     @ApiProperty()
     @IsNumber()
@@ -56,22 +56,22 @@ export class UpdateUsabilidadeDto extends PartialType(CreateUsabilidadeDto) {
     p3_1: number;
 
     @ApiProperty()
-    @IsNumber()
-    p3_1_1: number;
+    @IsString()
+    p3_1_1: string;
 
     @ApiProperty()
     @IsNumber()
     p3_2: number;
 
     @ApiProperty()
-    @IsNumber()
-    p3_2_1: number;
+    @IsString()
+    p3_2_1: string;
 
     @ApiProperty()
     @IsNumber()
     p4_1: number;
 
     @ApiProperty()
-    @IsNumber()
-    p4_1_1: number;
+    @IsString()
+    p4_1_1: string;
 }

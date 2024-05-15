@@ -12,25 +12,40 @@ export class Ipaq {
     p1_a: string
 
     @Column()
-    p1_b: string
+    p1_b_h: string
+
+    @Column()
+    p1_b_m: string
 
     @Column()
     p2_a: string
 
     @Column()
-    p2_b: string
+    p2_b_h: string
+
+    @Column()
+    p2_b_m: string
 
     @Column()
     p3_a: string
 
     @Column()
-    p3_b: string
+    p3_b_h: string
 
     @Column()
-    p4_a: string
+    p3_b_m: string
 
     @Column()
-    p4_b: string
+    p4_a_h: string
+
+    @Column()
+    p4_a_m: string
+
+    @Column()
+    p4_b_h: string
+
+    @Column()
+    p4_b_m: string
 
     @CreateDateColumn()
     created: Date;
