@@ -7,70 +7,70 @@ export class CreateUsabilidadeDto {
     paciente_id: number;
 
     @ApiProperty()
-    @IsString()
-    p1: string;
+    @IsNumber()
+    p1: number;
 
     @ApiProperty()
-    @IsString()
-    p1_0: string;
+    @IsNumber()
+    p1_0: number;
 
     @ApiProperty()
-    @IsString()
-    p1_1_1: string;
+    @IsNumber()
+    p1_1_1: number;
 
     @ApiProperty()
-    @IsString()
-    p1_1_2: string;
+    @IsNumber()
+    p1_1_2: number;
 
     @ApiProperty()
-    @IsString()
-    p1_1_3: string;
+    @IsNumber()
+    p1_1_3: number;
 
     @ApiProperty()
-    @IsString()
-    p1_1_4: string;
+    @IsNumber()
+    p1_1_4: number;
 
     @ApiProperty()
-    @IsString()
-    p1_1_5: string;
+    @IsNumber()
+    p1_1_5: number;
 
     @ApiProperty()
-    @IsString()
-    p1_2: string;
+    @IsNumber()
+    p1_2: number;
 
     @ApiProperty()
-    @IsString()
-    p1_3: string;
+    @IsNumber()
+    p1_3: number;
 
     @ApiProperty()
-    @IsString()
-    p2_1: string;
+    @IsNumber()
+    p2_1: number;
 
     @ApiProperty()
-    @IsString()
-    p2_2: string;
+    @IsNumber()
+    p2_2: number;
 
     @ApiProperty()
-    @IsString()
-    p3_1: string;
+    @IsNumber()
+    p3_1: number;
 
     @ApiProperty()
-    @IsString()
-    p3_1_1: string;
+    @IsNumber()
+    p3_1_1: number;
 
     @ApiProperty()
-    @IsString()
-    p3_2: string;
+    @IsNumber()
+    p3_2: number;
 
     @ApiProperty()
-    @IsString()
-    p3_2_1: string;
+    @IsNumber()
+    p3_2_1: number;
 
     @ApiProperty()
-    @IsString()
-    p4_1: string;
+    @IsNumber()
+    p4_1: number;
 
     @ApiProperty()
-    @IsString()
-    p4_1_1: string;
+    @IsNumber()
+    p4_1_1: number;
 }

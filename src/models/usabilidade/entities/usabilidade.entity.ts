@@ -9,55 +9,55 @@ export class Usabilidade {
     paciente_id: number;
 
     @Column()
-    p1: string;
+    p1: number;
 
     @Column()
     p1_0: string;
 
     @Column()
-    p1_1_1: string;
+    p1_1_1: number;
 
     @Column()
-    p1_1_2: string;
+    p1_1_2: number;
 
     @Column()
-    p1_1_3: string;
+    p1_1_3: number;
 
     @Column()
-    p1_1_4: string;
+    p1_1_4: number;
 
     @Column()
-    p1_1_5: string;
+    p1_1_5: number;
 
     @Column()
-    p1_2: string;
+    p1_2: number;
 
     @Column()
-    p1_3: string;
+    p1_3: number;
 
     @Column()
-    p2_1: string;
+    p2_1: number;
 
     @Column()
-    p2_2: string;
+    p2_2: number;
 
     @Column()
-    p3_1: string;
+    p3_1: number;
 
     @Column()
-    p3_1_1: string;
+    p3_1_1: number;
 
     @Column()
-    p3_2: string;
+    p3_2: number;
 
     @Column()
-    p3_2_1: string;
+    p3_2_1: number;
 
     @Column()
-    p4_1: string;
+    p4_1: number;
 
     @Column()
-    p4_1_1: string;
+    p4_1_1: number;
 
     @CreateDateColumn()
     created: Date;
