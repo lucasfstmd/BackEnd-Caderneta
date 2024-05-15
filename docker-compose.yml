@@ -1,0 +1,35 @@
+version: "3.8"
+services:
+  back-end:
+    container_name: caderneta-backend
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - caderneta-networks
+    ports:
+      - "8080:8080"
+
+  db:
+    container_name: caderneta-mysql
+    image: mysql/mysql-server
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_DEFAULT_SCHEMA}
+      MYSQL_USER: ${DATABASE_USER}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - "3306:3306"
+    networks:
+      - caderneta-networks
+
+volumes:
+  caderneta-mysql-data:
+    name: caderneta-mysql
+
+networks:
+  caderneta-networks:
+    name: caderneta-networks
+    driver: bridge
