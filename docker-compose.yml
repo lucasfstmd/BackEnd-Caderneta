@@ -12,7 +12,7 @@ services:
       - "8080:8080"
 
   db:
-    container_name: caderneta-mysql
+    container_name: caderneta-mysql-data
     image: mysql/mysql-server
     restart: always
     environment:
