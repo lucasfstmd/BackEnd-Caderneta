@@ -19,13 +19,15 @@ async function bootstrap() {
     app = await NestFactory.create(AppModule);
   }
 
-    const options = {
-        "origin": "*",
-        "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-        "preflightContinue": false,
-        "optionsSuccessStatus": 204
-    }
-    app.use(cors(options));
+    app.use(cors({
+        origin: '*',
+        methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEADER', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+        exposedHeaders: ['Content-Type', 'x-ratelimit-limit', 'x-ratelimit-remaining', 'X-Total-Count'],
+        credentials: true,
+        preflightContinue: false,
+        optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+    }))
 
   const config = new DocumentBuilder()
       .setTitle('API BackEnd Caderneta')
