@@ -19,6 +19,14 @@ async function bootstrap() {
     app = await NestFactory.create(AppModule);
   }
 
+    const options = {
+        "origin": "*",
+        "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+        "preflightContinue": false,
+        "optionsSuccessStatus": 204
+    }
+    app.use(cors(options));
+
   const config = new DocumentBuilder()
       .setTitle('API BackEnd Caderneta')
       .setDescription(
