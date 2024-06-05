@@ -14,7 +14,7 @@ async function bootstrap() {
   let app: INestApplication;
 
   const corsOptions = {
-    origin: 'https://proeva-caderneta.ccs.ufrn.br',
+    origin: '*',
     methods: ['POST', 'GET', 'DELETE', 'PATCH'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     optionsSuccessStatus: 204,
