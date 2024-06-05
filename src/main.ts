@@ -16,13 +16,10 @@ async function bootstrap() {
   if (process.env.NODE_ENV === "deploy") {
     app = await NestFactory.create(AppModule, { httpsOptions, cors: true });
   } else {
-    app = await NestFactory.create(AppModule, {cors: true});
+    app = await NestFactory.create(AppModule, {cors: {
+      origin: true, methods: ['POST', 'GET', 'DELETE', 'PATCH']
+      }});
   }
-
-  app.use(cors({
-    origin: '*',
-    methods: ['POST', 'GET', 'DELETE', 'PATCH']
-  }))
 
   const config = new DocumentBuilder()
     .setTitle('API BackEnd Caderneta')
