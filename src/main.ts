@@ -2,26 +2,21 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { INestApplication, ValidationPipe } from '@nestjs/common';
-const cors = require('cors')
+import * as fs from 'fs'
 
-/*const httpsOptions = {
-  key: fs.readFileSync('.certs/privkey.pem'),
-  cert: fs.readFileSync('.certs/cert.pem'),
-};*/
+const httpsOptions = {
+  key: fs.readFileSync(`${process.env.SSL_KEY_PATH}`),
+  cert: fs.readFileSync(`${process.env.SSL_CERT_PATH}`),
+};
 
 async function bootstrap() {
-  const app: INestApplication = await NestFactory.create(AppModule);
+  let app: INestApplication
 
-  app.use(cors({
-    origin: 'http://localhost:3000',
-    methods: ['POST', 'GET', 'DELETE', 'PATCH'],
-  }));
-
-  /*  if (process.env.NODE_ENV === "deploy") {
+  if (process.env.NODE_ENV === "deploy") {
     app = await NestFactory.create(AppModule, { httpsOptions, cors: true });
   } else {
-    app = await NestFactory.create(AppModule, { cors: true });
-  }*/
+    app = await NestFactory.create(AppModule, {cors: true});
+  }
 
   const config = new DocumentBuilder()
     .setTitle('API BackEnd Caderneta')
