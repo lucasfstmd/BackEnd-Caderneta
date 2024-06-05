@@ -13,20 +13,11 @@ const httpsOptions = {
 async function bootstrap() {
   let app: INestApplication;
 
-  const corsOptions = {
-    origin: '*',
-    methods: ['POST', 'GET', 'DELETE', 'PATCH'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    optionsSuccessStatus: 204,
-  };
-
   if (process.env.NODE_ENV === 'deploy') {
     app = await NestFactory.create(AppModule, { httpsOptions });
   } else {
     app = await NestFactory.create(AppModule);
   }
-
-  app.use(cors(corsOptions));
 
   const config = new DocumentBuilder()
       .setTitle('API BackEnd Caderneta')
@@ -47,7 +38,12 @@ async function bootstrap() {
       }),
   );
   const port = process.env.PORT || 3333;
-
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, PATCH');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
+    next();
+  });
   await app.listen(port);
   console.log(`\nApplication on ${port}`);
 }
