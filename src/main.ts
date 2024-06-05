@@ -14,7 +14,7 @@ async function bootstrap() {
   let app: INestApplication;
 
   if (process.env.NODE_ENV === 'deploy') {
-    app = await NestFactory.create(AppModule, { httpsOptions });
+    app = await NestFactory.create(AppModule, { httpsOptions, cors: true });
   } else {
     app = await NestFactory.create(AppModule);
   }
