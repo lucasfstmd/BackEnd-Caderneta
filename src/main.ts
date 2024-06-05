@@ -14,9 +14,11 @@ async function bootstrap() {
   let app: INestApplication
 
   if (process.env.NODE_ENV === "deploy") {
-    app = await NestFactory.create(AppModule, { httpsOptions, cors: true });
+    app = await NestFactory.create(AppModule, { httpsOptions, cors: {
+        origin: 'https://proeva-caderneta.ccs.ufrn.br', methods: ['POST', 'GET', 'DELETE', 'PATCH']
+      } });
   } else {
-    app = await NestFactory.create(AppModule, {cors: {
+    app = await NestFactory.create(AppModule, { cors: {
       origin: 'https://proeva-caderneta.ccs.ufrn.br', methods: ['POST', 'GET', 'DELETE', 'PATCH']
       }});
   }
