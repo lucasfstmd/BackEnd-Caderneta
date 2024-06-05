@@ -152,10 +152,6 @@ export class CreatePacienteDto {
 
   @ApiProperty()
   @IsString()
-  qual_etnia: string;
-
-  @ApiProperty()
-  @IsString()
   data_nascimento: string;
 
   @ApiProperty()
