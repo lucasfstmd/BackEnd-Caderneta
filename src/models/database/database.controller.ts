@@ -29,6 +29,7 @@ import { FragilidadesService } from '../fragilidades/fragilidades.service';
 import { FrrisquesService } from '../frrisques/frrisques.service';
 import { InfanciasService } from '../infancias/infancias.service';
 import { SarcfsService } from '../sarcfs/sarcfs.service';
+import { ComplementaresService } from '../complementares/complementares.service'
 
 @Controller('api/v1/database')
 export class DatabaseController {
@@ -45,6 +46,7 @@ export class DatabaseController {
     private readonly pesoService: PesosService,
     private readonly pesoPService: PesoPerdasService,
     private readonly vService: VulnerabilidadesService,
+    private readonly complementaresService: ComplementaresService,
     private readonly ambService: AmbientaisService,
     private readonly qService: QuedasService,
     private readonly cronicaService: CronicasService,
@@ -97,6 +99,7 @@ export class DatabaseController {
     const frr = await this.frrService.findAll();
     const inf = await this.infService.findAll();
     const sarcfs = await this.sarcfService.findAll();
+    const complement = await this.complementaresService.findAll();
 
     const build = (array, field, patient_id) => {
       return array
@@ -148,8 +151,9 @@ export class DatabaseController {
       const exameLabo = build(le, 'exames-laboratoriais', patient.id);
       const fragilidade = build(fr, 'fragilidades', patient.id);
       const frrisque = build(frr, 'frrisques', patient.id);
-      const infancia = build(inf, 'infancia', patient.id);
+      const infancia = build(inf, 'adversidades', patient.id);
       const sarcf = build(sarcfs, 'sarcfs', patient.id);
+      const complementares = build(complement, 'complementares', patient.id);
 
       return {
         ...patient,
@@ -165,6 +169,7 @@ export class DatabaseController {
         ...pesoPerda,
         ...vulnerabilidade,
         ...ambiental,
+        ...complementares,
         ...queda,
         ...cronicas,
         ...intensidade,

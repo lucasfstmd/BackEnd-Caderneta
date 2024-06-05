@@ -61,6 +61,8 @@ import { InfanciasService } from '../infancias/infancias.service';
 import { infanciasProviders } from '../infancias/infancias.providers';
 import { SarcfsService } from '../sarcfs/sarcfs.service';
 import { sarcfsProviders } from '../sarcfs/sarcfs.providers';
+import { ComplementaresService } from '../complementares/complementares.service'
+import { complementaresProviders } from '../complementares/complementares.providers'
 
 @Module({
   imports: [DataBaseModule],
@@ -126,6 +128,8 @@ import { sarcfsProviders } from '../sarcfs/sarcfs.providers';
     ...infanciasProviders,
     SarcfsService,
     ...sarcfsProviders,
+    ComplementaresService,
+      ...complementaresProviders
   ],
 })
 export class DatabaseModule {}
