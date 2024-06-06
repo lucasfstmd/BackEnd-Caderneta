@@ -155,8 +155,8 @@ export class CreatePacienteDto {
   data_nascimento: string;
 
   @ApiProperty()
-  @IsNumber()
-  possui_internet: number;
+  @IsString()
+  possui_internet: string;
 
   @ApiProperty()
   @IsString()
