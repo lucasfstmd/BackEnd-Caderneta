@@ -23,6 +23,13 @@ export class PacientesService {
   }
 
   update(id: number, updatePacienteDto: UpdatePacienteDto) {
+    if (updatePacienteDto.possui_internet === "Selecionar") {
+      const patient: UpdatePacienteDto = {
+        ...updatePacienteDto,
+        possui_internet: '0'
+      }
+      return this.pacientesRepository.update(id, patient);
+    }
     return this.pacientesRepository.update(id, updatePacienteDto);
   }
 
