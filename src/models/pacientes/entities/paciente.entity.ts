@@ -132,7 +132,7 @@ export class Paciente {
   data_nascimento: Date;
 
   @Column({ type: 'tinyint', default: 0, nullable: true })
-  possui_internet: string;
+  possui_internet: any;
 
   @Column({ length: 100, nullable: true })
   numero_identificacao: string;

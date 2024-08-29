@@ -156,8 +156,7 @@ export class UpdatePacienteDto extends PartialType(CreatePacienteDto) {
   data_nascimento?: string;
 
   @ApiProperty()
-  @IsString()
-  possui_internet?: string;
+  possui_internet?: any;
 
   @ApiProperty()
   @IsString()
